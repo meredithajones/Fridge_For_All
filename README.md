@@ -2,9 +2,9 @@
 ***
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![GitHub repo size](https://img.shields.io/github/repo-size/meredithajones/Employee_Directory?logo=github)
-![GitHub top language](https://img.shields.io/github/languages/top/meredithajones/Employee_Directory?color=green&logo=github&logoColor=green)
-![GitHub language count](https://img.shields.io/github/languages/count/meredithajones/Employee_Directory)
+![GitHub repo size](https://img.shields.io/github/repo-size/meredithajones/Fridge_For_All?logo=github)
+![GitHub top language](https://img.shields.io/github/languages/top/meredithajones/Fridge_For_All?color=green&logo=github&logoColor=green)
+![GitHub language count](https://img.shields.io/github/languages/count/meredithajones/Fridge_For_All)
 
 
 ![html badge](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
