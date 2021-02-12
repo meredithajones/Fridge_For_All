@@ -6,6 +6,7 @@ import About from "./components/pages/About";
 import Home from "./components/pages/Home";
 import Fridge from "./components/pages/Fridge";
 import Locations from "./components/pages/Locations";
+import Login from "./components/pages/Login";
 
 //importing components
 import Navbar from "./components/Navbar";
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/fridge" component={Fridge} />
         <Route exact path="/locations" component={Locations} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/login" component={Login} />
         <Footer />
       </div>
     </Router>
