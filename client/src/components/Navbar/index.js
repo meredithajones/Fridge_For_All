@@ -8,7 +8,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg">
     <div className="container-fluid">
       <Link className="navbar-brand" to="/">
-        FridgeForAll
+      🍎 Fridge For All
       </Link>
       <div>
         <ul className="navbar-nav">
@@ -21,7 +21,7 @@ function Navbar() {
                   : "nav-link"
               }
             >
-              Fridge
+              Check The Fridge
             </Link>
           </li>
           <li className="nav-item">
@@ -46,6 +46,18 @@ function Navbar() {
               }
             >
               About
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to=""
+              className={
+                window.location.pathname === ""
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              Logout
             </Link>
           </li>
         </ul>

@@ -1,6 +1,8 @@
 footer {
-    border-top: solid 1px #333;
+    background: ;
     font-size: small;
     bottom: 0;
-    display: block
+    display: block;
+    position:relative;
+    width: 100%
 }
