@@ -1,6 +1,6 @@
 import React from "react";
 
-function Form() {
+function LoginForm() {
     return (
 <form class="signup">
     <div class="form-group">
@@ -17,4 +17,4 @@ function Form() {
     )
 }
 
-export default Form;
+export default LoginForm;

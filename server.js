@@ -4,8 +4,11 @@ const mongoose = require("mongoose");
 const path = require("path");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv")
+const cookieParser = require("cookie-parser")
+const cors = require("cors")
 // const logger = require("morgan");
 
+dotenv.config()
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -15,16 +18,21 @@ const app = express();
 // app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser);
+app.use(cors({
+  origin: ["http://localhost:3000"]
+}));
 
 // // Serve up static assets (usually on heroku)
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("client/build"));
 // }
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fridge_for_all", {
-useNewUrlParser: true,
-  useFindAndModify: false,
+mongoose.connect(process.env.MDB_CONNECT, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 },
+
 (err) => {
   if (err) return console.error(err);
   console.log("Connected to Mongo")
@@ -43,11 +51,9 @@ useNewUrlParser: true,
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 
-app.get("/test", (req, res) => {
-    res.send("it works")
-  })
-
 app.use("/auth", require("./routers/userRouter"))
+app.use("/customer", require("./routers/customerRouter"))
+
 
 // db.on("error", error => {
 //   console.log("Database Error:", error);
@@ -57,6 +63,5 @@ app.listen(PORT, function () {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
 
   });
+  
 module.exports = app;
-
-//mongodb+srv://luke_martin:MjGhULd1dwlGoiG3@cluster0.nggyf.mongodb.net/<dbname>?retryWrites=true&w=majority
