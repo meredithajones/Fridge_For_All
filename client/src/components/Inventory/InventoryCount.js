@@ -3,7 +3,7 @@ import Inventory from './Inventory';
 import {GrSubtractCircle} from 'react-icons/gr';
 import {SiAddthis} from 'react-icons/si';
 
-const InventoryCount = ({inventoryItems, itemAdded, removeItem, updateInventoryItem}) => {
+const InventoryCount = ({ inventoryItems, itemAdded, removeItem, updateInventoryItem}) => {
     const [edit, setEdit] = useState ({
         id: null, 
         value: ''

@@ -3,7 +3,7 @@ import InventoryCount from './InventoryCount';
 import React, {useState} from 'react';
 
 function InventoryList() {
-    const[items, setItems] = useState([])
+    const[inventoryItems, setinventoryItems] = useState([])
 
     //Ensures that only text will pass through the input box
     const addInventory = item => {
@@ -11,18 +11,21 @@ function InventoryList() {
             return
         }
 
-        const newItem = [item, ...items]
+        const newinventoryItems = [item, ...inventoryItems]
 
-        setItems(newItem);
-        console.log(item, ...items);
-    }
+        setinventoryItems(newinventoryItems);
+        console.log(item, ...inventoryItems);
+    };
 
 
     return (
         <div>
             <h2>Dropping Something Off? Picking something up? Please add or subtract it below:</h2>
             <Inventory onSubmit={addInventory} />
-        </div>
+            <InventoryCount
+            inventoryItems={inventoryItems}
+            />
+            </div>
     );
 }
 
