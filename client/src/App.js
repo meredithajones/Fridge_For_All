@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import axios from "axios"
 
 //importing pages
 import About from "./components/pages/About";
@@ -13,6 +14,8 @@ import InventoryList from "./components/Inventory/InventoryList";
 //importing components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (

@@ -18,9 +18,10 @@ const app = express();
 // app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cookieParser);
+app.use(cookieParser());
 app.use(cors({
-  origin: ["http://localhost:3000"]
+  origin: ["http://localhost:3000"],
+  credentials: true
 }));
 
 // // Serve up static assets (usually on heroku)
@@ -63,5 +64,5 @@ app.listen(PORT, function () {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
 
   });
-  
+
 module.exports = app;

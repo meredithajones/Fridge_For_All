@@ -1,20 +1,51 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios"
 
 function LoginForm() {
-    return (
-<form class="signup">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="email-input" placeholder="Email" />
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="password-input" placeholder="Password" />
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    
-  </form>
-    )
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+async function login(e) {
+  e.preventDefault()
+
+  try {
+    const loginData = {
+      email, 
+      password, 
+    };
+
+    await axios.post("http://localhost:3001/auth/login", loginData, {
+      withCredentials: true
+    })
+
+  } catch(err) {
+    console.error(err)
+  }
 }
 
+  return (
+    <div>
+      <h1> log into your account</h1>
+      <form onSubmit={login}>
+        <input 
+        type="email" 
+        placeholder="Email"
+        onChange={(e) => setEmail(e.target.value)}
+        value={email}
+        />
+        <input 
+        type="password" 
+        placeholder="Password"
+        onChange={(e) => setPassword(e.target.value)}
+        value={password} />
+
+        <button type="submit" className="btn btn-primary">Log in</button>
+      </form>
+
+    </div>
+
+
+  )
+}
 export default LoginForm;
