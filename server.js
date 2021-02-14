@@ -9,7 +9,6 @@ const logger = require("morgan");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-c\
 
 //Middleware
 app.use(logger("dev"));
