@@ -5,7 +5,7 @@ import Container from "../Container";
 import Form from "../Form";
 
 
-const Login = () => (
+const Register = () => (
    <Container>
         <Row>
             <Col size="md-12">
@@ -13,11 +13,11 @@ const Login = () => (
                 <h1>Welcome to Fridge for All </h1>
                 <h4>Please enter your login information, or sign up for a new account below</h4>
                 <Form />
-                <a href = "/Register"> Register </a>
+                <a href = "/Login"> Login </a>
                 </div>
             </Col>
         </Row>
      </Container>
 );
 
-export default Login;
+export default Register;
