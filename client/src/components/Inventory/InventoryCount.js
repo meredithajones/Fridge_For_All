@@ -3,14 +3,14 @@ import Inventory from './Inventory';
 import {GrSubtractCircle} from 'react-icons/gr';
 import {SiAddthis} from 'react-icons/si';
 
-const inventoryItem = ({inventoryItems, itemAdded, removeItem, updateItem}) => {
+const InventoryCount = ({inventoryItems, itemAdded, removeItem, updateInventoryItem}) => {
     const [edit, setEdit] = useState ({
         id: null, 
         value: ''
     });
 
 const submitUpdate = value => {
-    updateinventoryItem (edit.id, value);
+    updateInventoryItem (edit.id, value);
     setEdit ({
         id: null, 
         value: ''
@@ -28,18 +28,19 @@ const submitUpdate = value => {
         >
             
 
-        <div key={inventoryItem.id} onClick={() => addItem(inventoryItem.id)}>
+        <div key={inventoryItem.id} onClick={() => itemAdded(inventoryItem.id)}>
             {inventoryItem.text}
             </div> 
             <div className="icons">
-                <SiAddthis />
-                <GrSubtractCircle />
+                <SiAddthis
+                 />
+                <GrSubtractCircle 
+                />
             </div>
 
         </div>
     )); 
     
-}
-
+};
 
 export default InventoryCount;

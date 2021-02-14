@@ -1,4 +1,5 @@
 import Inventory from './Inventory';
+import InventoryCount from './InventoryCount';
 import React, {useState} from 'react';
 
 function InventoryList() {
@@ -13,7 +14,7 @@ function InventoryList() {
         const newItem = [item, ...items]
 
         setItems(newItem);
-        console.log(...items);
+        console.log(item, ...items);
     }
 
 

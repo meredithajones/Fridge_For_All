@@ -26,11 +26,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fridge_for_all"
 });
 
 
-const db = mongojs(databaseUrl, collections);
+// const db = mongojs(databaseUrl, collections);
   
-  db.on("error", error => {
-    console.log("Database Error:", error);
-  });
+//   db.on("error", error => {
+//     console.log("Database Error:", error);
+//   });
 
 // Send every request to the React app
 // Define any API routes before this runs
@@ -38,9 +38,9 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-db.on("error", error => {
-  console.log("Database Error:", error);
-});
+// db.on("error", error => {
+//   console.log("Database Error:", error);
+// });
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
