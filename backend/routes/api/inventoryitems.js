@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { default: inventory } = require('../../client/src/components/Inventory/Inventory');
-let Inventory = require('../models/inventory.model');
+const { default: inventory } = require('../../../client/src/components/Inventory/Inventory');
+let Inventory = require('../../models/Inventory.model');
 
 router.route('/').get((req, res) => {
   Inventory.find()
