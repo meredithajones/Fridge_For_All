@@ -33,6 +33,18 @@ render () {
                   {items.map(({ id, name})=>(
                     <CSSTransition key={id} timeout={500} classNames="fade">
                         <ListGroupItem>
+                            <Button
+                            className= "remove-button"
+                            color="danger"
+                            size="sm"
+                            margin-right="0.5rem"
+                            onClick= {() =>{
+                                this.setState(state => ({
+                                    items: state.items.filter (item => item.id !==id )
+                                })
+                                    )
+                            }}
+                            >&times;</Button>
                             {name}
                         </ListGroupItem>
                     </CSSTransition>
