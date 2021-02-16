@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import inventory from "./inventory.json";
-import LittleFridge from "../LittleFridge";
+//import LittleFridge from "../LittleFridge";
 // import Inventory from "../Inventory";
 
 

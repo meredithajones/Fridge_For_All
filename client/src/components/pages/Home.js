@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => (
   <div className="container rounded w-75 m-5 p-5 mx-auto d-block">
-  <img src="imgs/FFA.png" width="25%" className="img-fluid rounded float-left m-3" />
+  <img src="imgs/FFA.png" width="25%" className="img-fluid rounded float-left m-3" alt="logo"/>
   <h1>Hi there!</h1>
   <p>
     Thanks for checking out Fridge For All. We hope you find what you're looking for! Here is where you can find out more information about the community fridges in Philadelphia and most importantly check the inventory of your local fridge! 
