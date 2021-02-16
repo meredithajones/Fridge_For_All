@@ -12,6 +12,7 @@
 ![react badge](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![node.js badge](https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white)
 
+<img src="https://raw.githubusercontent.com/meredithajones/Fridge_For_All/main/client/public/imgs/FFA.png" width="300">
 
 ## Table of Contents
 
@@ -36,7 +37,7 @@
 
 ## Introduction
   
-
+Community fridges are fully stocked, volunteer-run refrigerators that are open to the  general public. Anyone can take what they need, no questions asked! Community fridges have been popping up all over the US and have become a way for communities to battle food insecurity due to homelessness, unemployment, and stalled stimulus checks. Did you know there are over 14 community fridges in Philadelphia? Part of the challenge of supporting a community fridge is knowing what is most needed in advance of dropping off provisions. Fridge For All aims to tackle this unique issue by creating an interactive database where users can see what's most urgent ahead of time, and plan accordingly. Users can add what they drop off to increase the total quantity for other users to see, while also being able to subtract from the quantity if they take anything home. In this way, we hope to encourage people to engage with their community more while reducing hunger and food waste.
 
 ## Starting the app locally
 
@@ -85,7 +86,6 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 * HTML
 
 * NodeJS
-
 
 * Font Awesome 
 
