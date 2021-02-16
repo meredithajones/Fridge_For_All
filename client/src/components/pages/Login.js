@@ -2,7 +2,7 @@ import React from "react";
 import Row from "../Row";
 import Col from "../Col";
 import Container from "../Container";
-import Form from "../Form";
+import LoginForm from "../LoginForm";
 
 
 const Login = () => (
@@ -12,7 +12,7 @@ const Login = () => (
                 <div className="login" style={{ background: "lightblue" }}>
                 <h1>Welcome to Fridge for All </h1>
                 <h4>Please enter your login information, or sign up for a new account below</h4>
-                <Form />
+                <LoginForm />
                 <a href = "/Register"> Register </a>
                 </div>
             </Col>
