@@ -6,6 +6,7 @@ const logger = require("morgan");
 const dotenv = require("dotenv")
 const cookieParser = require("cookie-parser")
 const cors = require("cors")
+const routes= require("./routes")
 
 dotenv.config()
 
@@ -34,12 +35,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fridge_for_all"
   useUnifiedTopology: true
 });
 
-
-const db = mongojs(databaseUrl, collections);
-  
-  db.on("error", error => {
-    console.log("Database Error:", error);
-  });
+app.use("/auth", require("./routes/api/userRouter"))
+app.use(routes)
 
 // Send every request to the React app
 // Define any API routes before this runs
@@ -47,12 +44,10 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.use("/auth", require("./backend/routes/api/userRouter"))
-
   
-db.on("error", error => {
-  console.log("Database Error:", error);
-});
+// db.on("error", error => {
+//   console.log("Database Error:", error);
+// });
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
