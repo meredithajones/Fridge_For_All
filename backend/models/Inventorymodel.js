@@ -10,10 +10,15 @@ const inventorySchema = new Schema({
     trim: true,
     minlength: 2
   },
-  date: {
-    type: Date,
-    default: Date.now
-  }
+date: {
+  type: Date, 
+  default: Date.now
+},
+
+quantity: {
+  type: Number, required: true,
+
+}
 });
 
 const InventoryData = mongoose.model('inventory', inventorySchema);

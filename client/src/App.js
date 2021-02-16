@@ -31,7 +31,7 @@ function App() {
         <Route exact path="/InventoryList" component={InventoryList} />
         <Route exact path="/SecondInventoryList" component={SecondInventoryList} />
         <Route exact path="/ThirdInventory" component={ThirdInventory} />
-
+        {/* <Route path= "/edit/:id" component={EditItem}/> */}
         <Footer />
       </div>
     </Router>
