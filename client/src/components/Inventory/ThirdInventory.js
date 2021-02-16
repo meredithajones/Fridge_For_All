@@ -13,7 +13,6 @@ const App = () => {
 	]);
 
 	const [inputValue, setInputValue] = useState('');
-	const [totalItemCount, setTotalItemCount] = useState(6);
 
 	const handleAddButtonClick = () => {
 		const newItem = {
@@ -26,7 +25,6 @@ const App = () => {
 
 		setItems(newItems);
 		setInputValue('');
-		calculateTotal();
 	};
 
 	const handleQuantityIncrease = (index) => {
@@ -35,7 +33,6 @@ const App = () => {
 		newItems[index].quantity++;
 
 		setItems(newItems);
-		calculateTotal();
 	};
 
 	const handleQuantityDecrease = (index) => {
@@ -44,7 +41,6 @@ const App = () => {
 		newItems[index].quantity--;
 
 		setItems(newItems);
-		calculateTotal();
 	};
 
 	const toggleComplete = (index) => {
@@ -55,13 +51,8 @@ const App = () => {
 		setItems(newItems);
 	};
 
-	const calculateTotal = () => {
-		const totalItemCount = items.reduce((total, item) => {
-			return total + item.quantity;
-		}, 0);
 
-		setTotalItemCount(totalItemCount);
-	};
+
 
 	return (
 		<div className='app-background'>
@@ -98,7 +89,6 @@ const App = () => {
 						</div>
 					))}
 				</div>
-				<div className='total'>Total: {totalItemCount}</div>
 			</div>
 		</div>
 	);
