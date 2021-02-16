@@ -1,9 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-// const mongojs = require("mongojs");
 const path = require("path");
 const bodyParser = require("body-parser");
-// const logger = require("morgan");
+const logger = require("morgan");
 
 
 const PORT = process.env.PORT || 3001;
@@ -22,7 +21,8 @@ if (process.env.NODE_ENV === "production") {
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fridge_for_all", {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true
 });
 
 

@@ -8,7 +8,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg">
     <div className="container-fluid">
       <Link className="navbar-brand" to="/">
-      🍎 Fridge For All
+      <span role="img" aria-label="apple-icon">🍎 </span>Fridge For All
       </Link>
       <div>
         <ul className="navbar-nav">

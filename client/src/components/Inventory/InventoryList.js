@@ -1,8 +1,8 @@
 import Inventory from './Inventory';
 import InventoryCount from './InventoryCount';
 import React, {useState} from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import uuid from 'uuid';
+//import { CSSTransition, TransitionGroup } from 'react-transition-group';
+//import uuid from 'uuid';
 
 function InventoryList() {
     const[inventoryItems, setinventoryItems] = useState([])

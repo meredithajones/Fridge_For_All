@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Mapquest from "../Map"
 import Row from "../Row";
 import Col from "../Col";
 
 function Locations() {
 
-  const [lat, setLat] = useState("39.9526")
-  const [lng, setLng] = useState("-75.1652")
+  const lat = "39.9526";
+  const lng = "-75.1652";
 
   return (
     
