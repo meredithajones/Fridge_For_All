@@ -15,12 +15,17 @@ const App = () => {
 
 	const [inputValue, setInputValue] = useState('');
 
+    //When button is clicked a new item will be created with unique id from uuid,
+    //default quantity of 1, and the name as the input value. 
 	const handleAddButtonClick = () => {
 		const newItem = {
+            id: uuid, 
 			itemName: inputValue,
 			quantity: 1,
 			isSelected: false,
-		};
+        };
+        
+        
 
 		const newItems = [...items, newItem];
 
@@ -47,7 +52,8 @@ const App = () => {
 	const toggleDelete = (index) => {
 		const newItems = [...items];
 
-		newItems[index].isSelected = !newItems[index].isSelected;
+        newItems[index].isSelected = !newItems[index].isSelected;
+        
 
 		setItems(newItems);
 	};
