@@ -29,8 +29,8 @@ body {
 }
 
 .main-container {
-  background-color: #e06331;
-  width: 500px;
+  background-color: #ff5f20;
+  width: 600px;
   height: min-content;
   border-radius: 5px;
   padding: 30px;
@@ -95,7 +95,6 @@ input:focus {
 }
 
 .item-action-buttons {
-  /* width: 30%; */
   display: flex;
   justify-content: space-between;
 }
@@ -105,10 +104,7 @@ input:focus {
   background-color: red;
 }
 
-.total {
-  float: right;
-  padding: 10px;
-}
+
 
 .quantity {
   display: flex;
@@ -116,7 +112,7 @@ input:focus {
   border: 1px solid #ec645b;
   background: white;
   border-radius: 50px;
-  font-size: 12px;
+  font-size: 25px;
   color: #ec645b;
   min-width: 70px;
   justify-content: space-between;
@@ -136,6 +132,6 @@ button:hover {
   cursor: pointer;
 }
 
-.completed {
+.deleted {
   text-decoration: line-through;
 }

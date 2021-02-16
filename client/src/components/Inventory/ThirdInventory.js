@@ -3,13 +3,14 @@ import React, { useState, useEffect } from 'react';
 import './../../index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
+import uuid from 'uuid';
 
 const App = () => {
 	//need item name, quantity
 	const [items, setItems] = useState([
-		{ itemName: 'Kale', quantity: 1, isSelected: false },
-		{ itemName: 'Bread', quantity: 3, isSelected: false },
-		{ itemName: 'Tomato', quantity: 2, isSelected: false },
+		{ id: uuid(), itemName: 'Kale', quantity: 1, isSelected: false },
+		{ id: uuid(), itemName: 'Bread', quantity: 3, isSelected: false },
+		{ id: uuid(), itemName: 'Tomato', quantity: 2, isSelected: false },
 	]);
 
 	const [inputValue, setInputValue] = useState('');
@@ -43,7 +44,7 @@ const App = () => {
 		setItems(newItems);
 	};
 
-	const toggleComplete = (index) => {
+	const toggleDelete = (index) => {
 		const newItems = [...items];
 
 		newItems[index].isSelected = !newItems[index].isSelected;
@@ -64,11 +65,11 @@ const App = () => {
 				<div className='item-list'>
 					{items.map((item, index) => (
 						<div className='item-container'>
-							<div className='item-name' onClick={() => toggleComplete(index)}>
+							<div className='item-name' onClick={() => toggleDelete(index)}>
 								{item.isSelected ? (
 									<>
 										<FontAwesomeIcon icon={faCheckCircle} />
-										<span className='completed'>{item.itemName}</span>
+										<span className='deleted'>{item.itemName}</span>
 									</>
 								) : (
 									<>
@@ -77,7 +78,9 @@ const App = () => {
 									</>
 								)}
 							</div>
+                                    
 							<div className='quantity'>
+
 								<button>
 									<FontAwesomeIcon icon={faChevronLeft} onClick={() => handleQuantityDecrease(index)} />
 								</button>
