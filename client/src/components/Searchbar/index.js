@@ -1,5 +1,9 @@
 import React from "react";
 import "./../../index.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSearch
+} from "@fortawesome/free-solid-svg-icons";
 
 const Searchbar = ({ keyword, setKeyword }) => {
   return (
@@ -11,6 +15,7 @@ const Searchbar = ({ keyword, setKeyword }) => {
         placeholder={"Search what's here "}
         onChange={(e) => setKeyword(e.target.value)}
       />
+<FontAwesomeIcon icon={faSearch}  />
     </div>
   );
 };
