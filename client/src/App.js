@@ -10,6 +10,7 @@ import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
 import InventoryList from "./components/Inventory/InventoryList";
 import SecondInventoryList from "./components/Inventory/SecondInventoryList";
+import ThirdInventory from "./components/Inventory/ThirdInventory";
 
 
 //importing components
@@ -29,6 +30,8 @@ function App() {
         <Route exact path="/register" component={Register} />
         <Route exact path="/InventoryList" component={InventoryList} />
         <Route exact path="/SecondInventoryList" component={SecondInventoryList} />
+        <Route exact path="/ThirdInventory" component={ThirdInventory} />
+
         <Footer />
       </div>
     </Router>
