@@ -50,7 +50,6 @@ function Locations() {
       <Mapquest
         height="70vh"
         width="100%"
-        float="right"
         center={[lat, lng]}
         tileLayer={'map'}
         zoom={12}
