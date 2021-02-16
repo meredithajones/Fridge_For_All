@@ -13,6 +13,11 @@ const inventorySchema = new Schema({
 date: {
   type: Date, 
   default: Date.now
+},
+
+quantity: {
+  type: Number, required: true,
+
 }
 });
 
