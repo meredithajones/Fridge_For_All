@@ -25,4 +25,11 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+//DELETE api/inventoryitems/:id
+router.delete('/:id', (req, res)=> {
+  Inventory.findById(req.params.id)
+  .then(inventory => item.remove().then(() => res.json({success: true})))
+  .catch(err => res.status(404).json({ delete: false}));
+});
+
 module.exports = router;
