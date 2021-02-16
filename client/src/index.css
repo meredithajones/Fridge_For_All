@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
   background: #e2e1e9;
   font-family: 'Rubik', sans-serif;
 }
@@ -13,10 +12,10 @@ body {
 /* Styling below added by Meredith--Tuesday 02/16 6:30am */
 * {
   font-size: 26px;
+  font-family: 'Rubik', sans-serif;
 }
 
 .App {
-  font-family: sans-serif;
   text-align: center;
 }
 

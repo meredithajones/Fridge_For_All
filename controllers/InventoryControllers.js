@@ -7,21 +7,21 @@ findAll: function(req, res) {
     db.Inventory
     .find(req.query)
     .sort({ quantity: -1 })
-    .then(dbModel => res.join (dbModel))
+    .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 },
 
 findById: function(req, params) {
     db.Inventory
     .find(req.params.id)
-    .then(dbModel => res.join (dbModel))
+    .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 },
 
 create: function(req, res) {
     db.Inventory
     .create(req.body)
-    .then(dbModel => res.join (dbModel))
+    .then(dbModel => res.json(dbModel))
 },
 
 update: function(req, res) {
