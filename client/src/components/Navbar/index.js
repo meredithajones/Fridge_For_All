@@ -1,3 +1,5 @@
+import { faAppleAlt, faBreadSlice } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 import './style.css';
@@ -8,7 +10,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg">
     <div className="container-fluid">
       <Link className="navbar-brand" to="/">
-      <span role="img" aria-label="apple-icon">🍎 </span>Fridge For All
+      <FontAwesomeIcon icon={faBreadSlice} /> Fridge For All
       </Link>
       <div>
         <ul className="navbar-nav">

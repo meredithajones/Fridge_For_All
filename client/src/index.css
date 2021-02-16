@@ -21,7 +21,7 @@ body {
 }
 
 .app-background {
-  background-color: #bee3ff;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +30,7 @@ body {
 
 .main-container {
   background-color: #ff5f20;
-  width: 600px;
+  /* width: 600px; */
   height: min-content;
   border-radius: 5px;
   padding: 30px;
@@ -114,7 +114,7 @@ input:focus {
   border-radius: 50px;
   font-size: 25px;
   color: #ec645b;
-  min-width: 70px;
+  /* min-width: 70px; */
   justify-content: space-between;
 }
 
