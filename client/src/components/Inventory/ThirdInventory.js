@@ -74,7 +74,7 @@ const App = ({keyword}) => {
         <FontAwesomeIcon icon={faPlus} onClick={() => handleAddButtonClick()} />
       </div>
       <div className="item-list">
-        {items.filter(item => item.itemName.includes(keyword)).map((item, index) => (
+        {items.filter(item => item.itemName.toLowerCase().includes(keyword.toLowerCase())).map((item, index) => (
           <div className="item-container">
             <div className="item-name" onClick={() => toggleDelete(index)}>
               {item.isSelected ? (
