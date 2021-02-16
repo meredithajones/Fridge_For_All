@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 //Create Schema 
 const inventorySchema = new Schema({
-    inventoryname: {
+  inventoryname: {
     type: String,
     required: true,
     trim: true,
@@ -13,6 +13,11 @@ const inventorySchema = new Schema({
 date: {
   type: Date, 
   default: Date.now
+},
+
+quantity: {
+  type: Number, required: true,
+
 }
 });
 
