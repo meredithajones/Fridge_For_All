@@ -1,43 +1,24 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import inventory from "./inventory.json";
 //import LittleFridge from "../LittleFridge";
 // import Inventory from "../Inventory";
+import Inventory from "../Inventory/ThirdInventory.js";
+import Searchbar from "../Searchbar";
+const Fridge = () => {
+  const [keyword, setKeyword] = useState("");
 
-
-class Fridge extends Component {
-  state = {
-    inventory
-  };
-
-  render() {
-    return (
-      <div className="container rounded w-75 m-5 p-5 mx-auto d-block">
-        <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Qty</th>
-      <th scope="col">Item</th>
-      <th scope="col">Take or Donate</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">4</th>
-      <td>Bananas</td>
-      <td>
-      <div class="d-grid gap-2 d-md-block">
-  <button class="btn btn-danger" type="button">–</button>
-  <button class="btn btn-success" type="button">+</button>
-</div>
-</td>
-    </tr>
-  </tbody>
-</table>
-
+  return (
+    <div className="container rounded w-100 m-5 mx-auto d-block">
+      <div className="row">
+        <div className="col">
+          <Inventory keyword={keyword} />
+        </div>
+        <div className="col">
+          <Searchbar keyword={keyword} setKeyword={setKeyword} />
+        </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-
-  export default Fridge;
+export default Fridge;
