@@ -18,8 +18,6 @@ const App = ({keyword}) => {
     { id: uuid(), itemName: "Tomato", quantity: 2, isSelected: false },
   ]);
 
-  
-
   const [inputValue, setInputValue] = useState("");
 
   //When button is clicked a new item will be created with unique id from uuid,
@@ -61,6 +59,15 @@ const App = ({keyword}) => {
 
     setItems(newItems);
   };
+
+  const sortProperty = quantity[quantity];
+      const sorted = [...items].sort((a, b) => b[sortProperty] - a[sortProperty]);
+      setData(sorted);
+	  console.log();
+    };
+
+    sortArray(sortType);
+  [sortType];
 
   return (
     <>

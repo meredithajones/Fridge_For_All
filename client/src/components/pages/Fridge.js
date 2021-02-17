@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-// import inventory from "./inventory.json";
-//import LittleFridge from "../LittleFridge";
-// import Inventory from "../Inventory";
 import Inventory from "../Inventory/ThirdInventory.js";
 import Searchbar from "../Searchbar";
+
 const Fridge = () => {
   const [keyword, setKeyword] = useState("");
 
