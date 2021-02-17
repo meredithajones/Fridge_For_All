@@ -14,8 +14,14 @@ const App = ({ keyword }) => {
   //need item name, quantity
   const [items, setItems] = useState([
     { id: uuid(), itemName: "Kale", quantity: 1, isSelected: false },
-    { id: uuid(), itemName: "Bread", quantity: 3, isSelected: false },
-    { id: uuid(), itemName: "Tomato", quantity: 2, isSelected: false },
+    { id: uuid(), itemName: "Bread", quantity: 8, isSelected: false },
+    { id: uuid(), itemName: "Tomato", quantity: 12, isSelected: false },
+    { id: uuid(), itemName: "Flour", quantity: 5, isSelected: false },
+    { id: uuid(), itemName: "Carrots", quantity: 4, isSelected: false },
+    { id: uuid(), itemName: "Peanut Butter", quantity: 3, isSelected: false },
+    { id: uuid(), itemName: "Jelly", quantity: 2, isSelected: false },
+    { id: uuid(), itemName: "Instant Ramen", quantity: 8, isSelected: false },
+    { id: uuid(), itemName: "Sugar", quantity: 5, isSelected: false },
   ]);
 
   const [inputValue, setInputValue] = useState("");
@@ -81,27 +87,24 @@ const App = ({ keyword }) => {
   }, []);
 
   //when the qty drops below 5, it turns red
-  //quantities between 6-10 are gray
+  //quantities between 6-10 are grey
   //quantities 11+ are blue
-  const qtyColor = (quantity: setItems) => {
-    if (quantity < 5) return urgent;
-    else if (quantity === 6) return good;
+  const qtyColor = (quantity) => {
+    if (quantity < 6) return urgent;
     else if (quantity > 10) return surplus;
+    else return good;
   };
-
   const urgent = {
-    color: "black",
-    backgroundColor: "red",
+    color: "#FFFFFF",
+    backgroundColor: "#FF6347",
   };
-
   const good = {
-    color: "black",
-    backgroundColor: "lightgray",
+    color: "#708090",
+    backgroundColor: "#F5F5F5",
   };
-
   const surplus = {
-    color: "black",
-    backgroundColor: "lightblue",
+    color: "#4682B4",
+    backgroundColor: "#B0E0E6",
   };
 
   return (
@@ -121,7 +124,7 @@ const App = ({ keyword }) => {
             item.itemName.toLowerCase().includes(keyword.toLowerCase())
           )
           .map((item, index) => (
-            <div className="item-container">
+            <div className="item-container" style={qtyColor(item.quantity)}>
               <div className="item-name" onClick={() => toggleDelete(index)}>
                 {item.isSelected ? (
                   <>
@@ -143,7 +146,6 @@ const App = ({ keyword }) => {
                     onClick={() => handleQuantityDecrease(index)}
                   />
                 </button>
-                {/* this is where the sorting needs to happen */}
                 <span>{item.quantity}</span>
                 <button>
                   <FontAwesomeIcon
