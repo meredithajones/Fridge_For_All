@@ -23,8 +23,8 @@ function Navbar() {
 
           <ul className="navbar-nav">
 
-          {loggedIn === false && (
-              <>
+          {/* {loggedIn === false && (
+              <> */}
             <li className="nav-item">
               <Link
                 to="/Login"
@@ -49,12 +49,12 @@ function Navbar() {
                 Register
               </Link>
             </li>
-            </>
-            )}
+            {/* </>
+            )} */}
 
 
-            {loggedIn === true && (
-              <>
+            {/* {loggedIn === true && (
+              <> */}
                 <li className="nav-item">
                   <Link
                     to="/Fridge"
@@ -102,8 +102,8 @@ function Navbar() {
                 <LogOutBtn />
               </Link>
             </li>
-              </>
-            )}
+              {/* </>
+            )} */}
           </ul>
         </div>
       </div>
