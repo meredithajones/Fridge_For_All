@@ -1,0 +1,13 @@
+#urgent {
+    color: #FF6347;
+}
+#good {
+    color: #F5F5F5;
+}
+#surplus {
+    color: #B0E0E6;
+}
+
+.text-shadow {
+    text-shadow: #000 1px 0 10px;
+}

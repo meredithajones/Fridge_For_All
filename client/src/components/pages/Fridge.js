@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Inventory from "../Inventory/ThirdInventory.js";
 import Searchbar from "../Searchbar";
+import Aside from "../Aside";
 
 const Fridge = () => {
   const [keyword, setKeyword] = useState("");
@@ -13,6 +14,7 @@ const Fridge = () => {
         </div>
         <div className="col">
           <Searchbar keyword={keyword} setKeyword={setKeyword} />
+          <Aside />
         </div>
       </div>
     </div>

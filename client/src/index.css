@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background: #e2e1e9;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 .container {
@@ -11,8 +11,8 @@ body {
 
 /* Styling below added by Meredith--Tuesday 02/16 6:30am */
 * {
-  font-size: 26px;
-  font-family: 'Rubik', sans-serif;
+  font-size: 22px;
+  font-family: "Rubik", sans-serif;
 }
 
 .App {
@@ -41,8 +41,8 @@ body {
 }
 
 .add-item-box {
-  background: #fbc1bb;
-  color: #ec645b;
+  background: #d8e9d5;
+  color: #42b058;
   margin-top: 1em;
   margin-bottom: 1em;
   display: flex;
@@ -59,13 +59,13 @@ body {
   box-sizing: border-box;
   border: none;
   background: transparent;
-  color: #ec645b;
+  color: #40a25f;
   width: 100%;
   height: 30px;
 }
 
 input::placeholder {
-  color: #ec645b;
+  color: #40a25f;
 }
 input:focus {
   outline: 0;
@@ -81,7 +81,7 @@ input:focus {
   align-items: center;
   justify-content: space-between;
   padding: 20px 0 20px 0;
-  border-bottom: 1px #fbc1bb solid;
+  border-bottom: 1px #ffffff solid;
 }
 
 .item-name {
@@ -103,16 +103,14 @@ input:focus {
   background-color: red;
 }
 
-
-
 .quantity {
   display: flex;
   align-items: center;
-  border: 1px solid #ec645b;
-  background: white;
+  border: 1px solid #bababa;
+  background: #fff;
   border-radius: 50px;
   font-size: 25px;
-  color: #ec645b;
+  color: #42b058;
   /* min-width: 70px; */
   justify-content: space-between;
 }
@@ -121,7 +119,7 @@ button {
   background: transparent;
   border: none;
   margin: 3px;
-  color: #ec645b;
+  color: #42b058;
 }
 button:focus {
   outline: 0;
