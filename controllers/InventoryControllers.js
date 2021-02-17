@@ -11,9 +11,10 @@ findAll: function(req, res) {
     .catch(err => res.status(422).json(err));
 },
 
-findById: function(req, params) {
+findById: function(req, res) {
+    console.log (req.params.id)
     db.Inventory
-    .find(req.params.id)
+    .findById(req.params.id)
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 },
@@ -25,15 +26,16 @@ create: function(req, res) {
 },
 
 update: function(req, res) {
+    console.log(req.body)
     db.Inventory
-    .findOneandUpdate({ _id: req.params.id }, req.body)
+    .findOneAndUpdate({ _id: req.params.id }, req.body)
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 },
 
 remove: function(req, res) {
     db.Inventory
-    .find(req.params.id)
+    .findById(req.params.id)
     .then(dbModel => dbModel.remove())
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));

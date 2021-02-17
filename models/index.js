@@ -1,4 +1,4 @@
 module.exports={
-    Inventory: require("./inventorymodel") ,
+    Inventory: require("./Inventorymodel") ,
     User: require("./userModel")
 }
