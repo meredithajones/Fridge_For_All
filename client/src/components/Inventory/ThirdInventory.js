@@ -18,9 +18,11 @@ const App = ({keyword}) => {
     { id: uuid(), itemName: "Tomato", quantity: 2, isSelected: false },
   ]);
 
-  
-
   const [inputValue, setInputValue] = useState("");
+
+  //sorting variables
+  const [sortQuantity, setSortType] = useState('quantity');
+  const [data, setData] = useState([]);
 
   //When button is clicked a new item will be created with unique id from uuid,
   //default quantity of 1, and the name as the input value.
@@ -43,7 +45,9 @@ const App = ({keyword}) => {
 
     newItems[index].quantity++;
 
+    //when the arrows are pushed, the quantity sorts in real time
     setItems(newItems);
+	sortArray(sortQuantity);
   };
 
   const handleQuantityDecrease = (index) => {
@@ -51,7 +55,9 @@ const App = ({keyword}) => {
 
     newItems[index].quantity--;
 
+    //when the arrows are pushed, the quantity sorts in real time
     setItems(newItems);
+	sortArray(sortQuantity);
   };
 
   const toggleDelete = (index) => {
@@ -61,6 +67,22 @@ const App = ({keyword}) => {
 
     setItems(newItems);
   };
+  
+  const sortArray = quantity => {
+	const quantities = {
+	  quantities: 'quantity',
+	};
+	const sortProperty = quantities[quantity];
+	//sort by lowest quantity first
+	const sorted = [...items].sort((a, b) => a['quantity'] - b['quantity']);
+	console.log({sorted})
+	setItems(sorted);
+  };
+
+  //sorting function to sort by quantity
+  useEffect(() => {
+    sortArray(sortQuantity);
+  }, []); 
 
   return (
     <>
@@ -97,7 +119,10 @@ const App = ({keyword}) => {
                   onClick={() => handleQuantityDecrease(index)}
                 />
               </button>
-              <span> {item.quantity} </span>
+			  {/* this is where the sorting needs to happen */}
+              <span>
+			    {item.quantity} 
+			  </span> 
               <button>
                 <FontAwesomeIcon
                   icon={faChevronRight}
