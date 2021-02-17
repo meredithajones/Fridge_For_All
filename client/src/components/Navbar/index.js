@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import AuthContext from "../../Context/AuthContext"
 import { Link } from "react-router-dom";
 import "./style.css";
+import LogOutBtn from "../LogOutBtn/LogOutBtn";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
@@ -22,7 +23,7 @@ function Navbar() {
 
           <ul className="navbar-nav">
 
-          {!loggedIn && (
+          {loggedIn === false && (
               <>
             <li className="nav-item">
               <Link
@@ -52,7 +53,7 @@ function Navbar() {
             )}
 
 
-            {loggedIn && (
+            {loggedIn === true && (
               <>
                 <li className="nav-item">
                   <Link
@@ -98,15 +99,11 @@ function Navbar() {
                     ? "nav-link active"
                     : "nav-link"
                 }>
-                Logout
+                <LogOutBtn />
               </Link>
             </li>
               </>
             )}
-
-
-
- 
           </ul>
         </div>
       </div>
