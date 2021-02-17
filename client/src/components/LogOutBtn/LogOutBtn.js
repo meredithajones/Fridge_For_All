@@ -16,7 +16,7 @@ function LogOutBtn () {
     
     }
 
-    return <button onClick={logOut} className="primary">
+    return <button onClick={logOut} className="btn-dark">
          Log Out
     </button>
 
