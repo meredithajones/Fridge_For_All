@@ -5,7 +5,6 @@ export default {
 postItem: function() {
     return axios.post("/inventoryitems/" + id);
 },
-  
   //Gets All Inventory Items
   getItems: function() {
     return axios.get("/inventoryitems");
