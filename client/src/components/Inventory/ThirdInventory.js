@@ -64,10 +64,13 @@ const App = ({keyword}) => {
     const newItems = [...items];
 
     newItems[index].isSelected = !newItems[index].isSelected;
-
+	
+	//clear the item from the array
+	newItems.splice(index, 1);
     setItems(newItems);
   };
-  
+
+  //sorting logic
   const sortArray = quantity => {
 	const quantities = {
 	  quantities: 'quantity',
@@ -79,7 +82,7 @@ const App = ({keyword}) => {
 	setItems(sorted);
   };
 
-  //sorting function to sort by quantity
+  //sorting function
   useEffect(() => {
     sortArray(sortQuantity);
   }, []); 
