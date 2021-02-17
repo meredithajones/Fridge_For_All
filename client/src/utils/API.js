@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default {
 //Post Inventory Items
-postItem: function() {
-    return axios.post("/inventoryitems/" + id);
+saveItem: function(inventoryData) {
+    return axios.post("/inventoryitems/" + inventoryData);
 },
   //Gets All Inventory Items
   getItems: function() {

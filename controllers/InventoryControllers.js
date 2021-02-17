@@ -1,4 +1,4 @@
-const db = require("../models")
+const db = require("../models");
 
 
 //Setting up methods for the Inventory controller
@@ -23,6 +23,8 @@ create: function(req, res) {
     db.Inventory
     .create(req.body)
     .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+
 },
 
 update: function(req, res) {
@@ -39,6 +41,5 @@ remove: function(req, res) {
     .then(dbModel => dbModel.remove())
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
-}
-
-}
+    }
+};
