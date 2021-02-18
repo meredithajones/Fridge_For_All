@@ -1,25 +1,25 @@
 import axios from "axios";
-import React, {useContext} from "react"
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../Context/AuthContext";
+import "./style.css";
 
-function LogOutBtn () {
-    
-    const {getLoggedIn} = useContext(AuthContext)
+function LogOutBtn() {
+  const { getLoggedIn } = useContext(AuthContext);
 
-    const history = useHistory();
+  const history = useHistory();
 
-   async function logOut() {
+  async function logOut() {
     await axios.get("/auth/logout");
     await getLoggedIn();
-    history.push("/")
-    
-    }
+    history.push("/");
+  }
 
-    return <button onClick={logOut} className="btn-dark">
-         Log Out
+  return (
+    <button onClick={logOut} className="btn">
+      Log Out
     </button>
-
+  );
 }
 
 export default LogOutBtn;
