@@ -27,9 +27,9 @@
    
 -[Usage](#Usage)
 
--[Project Challenges](#Project_Challenges)
+-[Project Challenges](#Challenges)
 
--[Future Development](#Future_Development)
+-[Future Development](#Development)
 
 -[Credits](#Credits)
 
@@ -102,22 +102,26 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 
 * Mongo AtlasDB
 
+* Testing through Postman
+
 * Hosting on Heroku
+
+
 
 
 	
 </details>
 
 
-## Project Challenges
+## Challenges
 *  As a team of three, we each took on quite a bit of work for this project. Luke took on a process for authentication which was so new that he was waiting for guidance to be released on implementation as he was writing the code. 
 
 * In styling the project, Kara initially began working with Material UI. After exploring the options that it provided, it did not seem like the best fit for our project and she quickly pivoted to React-Bootstrap.
 
 * We very much wanted to include a feature to translate the app from English to Spanish. Meredith completed the setup for i18next only to discover that it requires programmers to create JSON files containing all words to be translated along with the corresponding language translation which took the endeavour far beyond the time available for this project.
 
-## Future Development
-*  We are very excited about the future of this project and have many ideas for how to grow the app's utility. 
+## Development
+ We are very excited about the future of this project and have many ideas for how to grow the app's utility. 
 <br>
 Some of the ideas that we would like to implement are:
 <br>
