@@ -31,6 +31,20 @@ function NavbarI() {
     <div>
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/"> Fridge For All</NavbarBrand>
+
+        {/* <Nav>
+          <NavItem>
+            <NavLink
+              href=""
+              className={
+                window.location.pathname === "" ? "nav-link active" : "nav-link"
+              }
+            >
+              <LogOutBtn />
+            </NavLink>
+          </NavItem>
+        </Nav> */}
+
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
