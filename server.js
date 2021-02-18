@@ -10,8 +10,11 @@ const routes= require("./routes")
 
 dotenv.config()
 
+
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+
 
 
 //Middleware
@@ -19,6 +22,10 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Credentials', true);
+  next();
+});
 app.use(cors({
   Origin: [
     "http://localhost:3000",
@@ -27,10 +34,7 @@ app.use(cors({
   credentials: true
 }));
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
+
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
