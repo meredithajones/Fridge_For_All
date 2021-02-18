@@ -22,7 +22,6 @@ import {
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function NavbarI() {
   const { loggedIn } = useContext(AuthContext);
-  console.log(loggedIn);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -113,9 +112,9 @@ function NavbarI() {
                     : "nav-link"
                 }
               >
-                <LogOutBtn />
               </NavLink>
             </NavItem>
+            <LogOutBtn />
             </>
             )}
           </Nav>
