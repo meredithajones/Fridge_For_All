@@ -16,8 +16,8 @@ saveItem: function(inventoryData) {
   },
 
 // Updates the item with the given id
-updateItem: function(id) {
-  return axios.put("/api/inventoryitems/" + id);
+updateItem: function(updatedInventoryData) {
+  return axios.put("/api/inventoryitems/" , updatedInventoryData);
 },
 
   // Deletes the item with the given id

@@ -26,28 +26,26 @@ const Inventory = ({ keyword }) => {
   // ]);
 
   const [inputValue, setInputValue] = useState("");
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState([]);
 
-//Code below added 02/18
+  //Code below added 02/18
   // function InventoryData() {
   //   // Setting our component's initial state
   //   const [inventoryData, setInventoryData] = useState([])
   //   const [formObject, setFormObject] = useState({})
-  
+
   //   // Load all items and store them with setInventoryData
-    useEffect(() => {
-      loadInventoryData()
-    }, [])
-  
+  useEffect(() => {
+    loadInventoryData();
+  }, []);
+
   // Loads all items and sets them to inventory
-    function loadInventoryData() {
-      API.getInventoryData()
-        .then(res => 
-          setItems(res.data)
-        )
-        .catch(err => console.log(err));
-    };
-    //End of code added 02/18
+  function loadInventoryData() {
+    API.getInventoryData()
+      .then((res) => setItems(res.data))
+      .catch((err) => console.log(err));
+  }
+  //End of code added 02/18
 
   //sorting variables
   const [sortQuantity, setSortType] = useState("quantity");
@@ -70,10 +68,23 @@ const Inventory = ({ keyword }) => {
 
   const handleQuantityIncrease = (index) => {
     const newItems = [...items];
-    newItems[index].quantity++;
+    console.log(newItems);
+    console.log(index);
+    let itemToUpdate = newItems.find(({ _id }) => _id === index);
+    
+    itemToUpdate.quantity++;
+    // newItems[index].quantity++;
+   
+    console.log(itemToUpdate);
+    API.updateItem(itemToUpdate)
+      .then((res) => {
+        console.log(res);
+        setItems([...items, itemToUpdate])
+      
+        sortArray(sortQuantity);
+      })
+      .catch((err) => console.log(err));
     //when the arrows are pushed, the quantity sorts in real time
-    setItems(newItems);
-    sortArray(sortQuantity);
   };
 
   const handleQuantityDecrease = (index) => {
@@ -147,8 +158,14 @@ const Inventory = ({ keyword }) => {
             item.name.toLowerCase().includes(keyword.toLowerCase())
           )
           .map((item, index) => (
-            <div className="item-container rounded" style={qtyColor(item.quantity)}>
-              <div className="item-name ml-1" onClick={() => toggleDelete(index)}>
+            <div
+              className="item-container rounded"
+              style={qtyColor(item.quantity)}
+            >
+              <div
+                className="item-name ml-1"
+                onClick={() => toggleDelete(index)}
+              >
                 {item.isSelected ? (
                   <>
                     <FontAwesomeIcon icon={faCheckCircle} />
@@ -166,15 +183,14 @@ const Inventory = ({ keyword }) => {
                 <button>
                   <FontAwesomeIcon
                     icon={faChevronLeft}
-                    
-                    onClick={() => handleQuantityDecrease(item.id)}
+                    onClick={() => handleQuantityDecrease(item._id)}
                   />
                 </button>
                 <span>{item.quantity}</span>
                 <button>
                   <FontAwesomeIcon
                     icon={faChevronRight}
-                    onClick={() => handleQuantityIncrease(item.id)}
+                    onClick={() => handleQuantityIncrease(item._id)}
                   />
                 </button>
               </div>
