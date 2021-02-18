@@ -27,6 +27,10 @@
    
 -[Usage](#Usage)
 
+-[Project Challenges](#Project_Challenges)
+
+-[Future Development](#Future_Development)
+
 -[Credits](#Credits)
 
 -[Contact](#Contact)
@@ -36,7 +40,7 @@
 
 ## Links
 
-* [Deployed Link]()
+* [Deployed Link](https://fridge-for-all-philly.herokuapp.com/)
 
 ## Introduction
   
@@ -96,6 +100,8 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 
 * React-Bootstap
 
+* Mongo AtlasDB
+
 * Hosting on Heroku
 
 
@@ -109,6 +115,22 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 * In styling the project, Kara initially began working with Material UI. After exploring the options that it provided, it did not seem like the best fit for our project and she quickly pivoted to React-Bootstrap.
 
 * We very much wanted to include a feature to translate the app from English to Spanish. Meredith completed the setup for i18next only to discover that it requires programmers to create JSON files containing all words to be translated along with the corresponding language translation which took the endeavour far beyond the time available for this project.
+
+## Future Development
+*  We are very excited about the future of this project and have many ideas for how to grow the app's utility. 
+<br>
+Some of the ideas that we would like to implement are:
+<br>
+
+-   Adding databases to encompass all of the community fridges in Philadelphia.
+
+- Adding the ability to generate directions from your current location or address input through our mapquest API. 
+
+- Adding the ability to translate the page into multiple languages. 
+
+- Setting up the ability for users to opt-in for email updates from fridge organizers. 
+
+- Creating the ability for the app to scan a QR code on each fridge to bring users quickly to that specific fridge's database. 
 
 
 ## Credits
