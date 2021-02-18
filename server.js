@@ -20,7 +20,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: ["http://localhost:3000"],
+  origin: [
+    "http://localhost:3000",
+    "https://young-forest-06114.herokuapp.com/"
+  ],
   credentials: true
 }));
 
