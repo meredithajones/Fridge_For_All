@@ -112,7 +112,7 @@ function NavbarI() {
                     : "nav-link"
                 }
               >
-                Locations
+                About
               </NavLink>
             </NavItem>
             <NavItem>
