@@ -1,21 +1,31 @@
 .btn {
-    margin-top: 10px;
-    margin-Bottom: 10px;
-    color: #494949;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #ffffff;
-    padding: 10px;
-    border: 3px solid !important;
-    border-color: black;
-    display: inline-block;
-    transition: all 0.4s ease 0s
-  
-  }
-  
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 10px;
+  border: 3px solid !important;
+  border-color: black;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+}
+
 .btn:hover {
   color: #ffffff;
   background: #16a55c;
   border-color: #16a55c;
-  transition: all 0.4s ease 0s
-  } 
+  transition: all 0.4s ease 0s;
+}
+
+.field {
+  background: #90ee90;
+  color: #008080;
+  margin: 5px;
+  /* display: flex; */
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px;
+  border: 0;
+}
