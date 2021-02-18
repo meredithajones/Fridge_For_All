@@ -8,7 +8,7 @@ function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // const { getLoggedIn } = useContext(AuthContext);
+  const { getLoggedIn } = useContext(AuthContext);
 
   const history = useHistory();
 
@@ -25,15 +25,15 @@ function LoginForm() {
         password,
       };
 
-      // await instance.post("/auth/login", loginData);
-      // await getLoggedIn();
+      await instance.post("/auth/login", loginData);
+      await getLoggedIn();
       history.push("/");
     } catch (err) {
       console.error(err);
     }
   }
   return (
-    <div className="container rounded w-75 mt-5 mb-5 p-3 d-block">
+    <div className="container rounded w-75 mt-5 mb-5 p-3 d-block text-center">
       <form onSubmit={login}>
         <input
           type="email"

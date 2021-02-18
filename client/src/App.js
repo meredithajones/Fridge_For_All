@@ -8,9 +8,9 @@ axios.default.withCredentials = true
 
 function App() {
   return (
-    // <AuthContextProvider>
+    <AuthContextProvider>
       <Router />
-    /* </AuthContextProvider> */
+    </AuthContextProvider>
   );
 }
 

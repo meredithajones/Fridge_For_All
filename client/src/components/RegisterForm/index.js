@@ -9,7 +9,7 @@ function RegisterForm() {
   const [password, setPassword] = useState("");
   const [passwordVerify, setPasswordVerify] = useState("");
 
-  // const { getLoggedIn } = useContext(AuthContext);
+  const { getLoggedIn } = useContext(AuthContext);
 
   const history = useHistory();
 
@@ -27,8 +27,8 @@ function RegisterForm() {
         passwordVerify,
       };
 
-      // await instance.post("/auth", registeredData);
-      // await getLoggedIn();
+      await instance.post("/auth", registeredData);
+      await getLoggedIn();
       history.push("/");
     } catch (err) {
       console.error(err);
@@ -36,7 +36,7 @@ function RegisterForm() {
   }
 
   return (
-    <div className="container rounded w-75 mt-5 mb-5 p-0 d-block">
+    <div className="container rounded w-75 mt-5 mb-5 p-0 d-block text-center">
       <form onSubmit={register}>
         <input
           type="email"
@@ -63,14 +63,11 @@ function RegisterForm() {
         />
 
         <br />
-        <div class="row">
-          <div class="col text-center">
-            <button type="submit" className="btn" onClick={register}>
-              {" "}
-              Register
-            </button>
-          </div>
-        </div>
+
+        <button type="submit" className="btn" onClick={register}>
+          {" "}
+          Register
+        </button>
       </form>
     </div>
   );
