@@ -9,7 +9,7 @@ function RegisterForm() {
   const [password, setPassword] = useState("");
   const [passwordVerify, setPasswordVerify] = useState("");
 
-  const { getLoggedIn } = useContext(AuthContext);
+  // const { getLoggedIn } = useContext(AuthContext);
 
   const history = useHistory();
 
@@ -27,8 +27,8 @@ function RegisterForm() {
         passwordVerify,
       };
 
-      await instance.post("/auth", registeredData);
-      await getLoggedIn();
+      // await instance.post("/auth", registeredData);
+      // await getLoggedIn();
       history.push("/");
     } catch (err) {
       console.error(err);
