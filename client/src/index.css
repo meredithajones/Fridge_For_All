@@ -41,7 +41,7 @@ body {
 }
 
 .add-item-box {
-  background: #90EE90;
+  background: #90ee90;
   color: #008080;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -80,7 +80,7 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0 20px 0;
+  padding: 10px 0 10px 0;
   border-bottom: 1px #ffffff solid;
 }
 

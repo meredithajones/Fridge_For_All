@@ -8,6 +8,12 @@
     color: #B0E0E6;
 }
 
+#urgent, #good, #surplus {
+margin-right: 10px;
+margin-left: 15px;
+font-size: 60px;
+}
+
 .text-shadow {
     text-shadow: #000 1px 0 10px;
 }
