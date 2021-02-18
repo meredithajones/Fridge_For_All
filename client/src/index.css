@@ -1,8 +1,14 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
   background: #e2e1e9;
   font-family: "Rubik", sans-serif;
+  padding-bottom: 30px;
 }
 
 .container {

@@ -16,7 +16,11 @@ function LogOutBtn() {
   }
 
   return (
-    <button onClick={logOut} className="btn">
+    <button
+      onClick={logOut}
+      type="button"
+      className="btn pt-0 pb-0 pl-2 pr-2 mt-0 mb-0 ml-1 mr-1 "
+    >
       Log Out
     </button>
   );
