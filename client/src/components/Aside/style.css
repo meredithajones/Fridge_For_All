@@ -1,24 +1,26 @@
 #urgent {
-    color: #FF6347;
+  color: #ff6347;
 }
 #good {
-    color: #D8BFD8;
+  color: #d8bfd8;
 }
 #surplus {
-    color: #B0E0E6;
+  color: #b0e0e6;
 }
 
-#urgent, #good, #surplus {
-margin-right: 10px;
-margin-left: 15px;
-font-size: 60px;
+#urgent,
+#good,
+#surplus {
+  margin-right: 10px;
+  margin-left: 15px;
+  font-size: 60px;
 }
 
 .text-shadow {
-    text-shadow: #000 1px 0 10px;
+  text-shadow: #000 1px 0 10px;
 }
 
 .legend {
-    background: #F1F1F1;
-    border-radius: 10px;
+  background: #f1f1f1;
+  border-radius: 10px;
 }
