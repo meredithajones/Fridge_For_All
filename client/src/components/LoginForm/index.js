@@ -8,7 +8,7 @@ function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // const { getLoggedIn } = useContext(AuthContext);
+  const { getLoggedIn } = useContext(AuthContext);
 
   const history = useHistory();
 
@@ -25,8 +25,8 @@ function LoginForm() {
         password,
       };
 
-      // await instance.post("/auth/login", loginData);
-      // await getLoggedIn();
+      await instance.post("/auth/login", loginData);
+      await getLoggedIn();
       history.push("/");
     } catch (err) {
       console.error(err);

@@ -20,7 +20,8 @@ import axios from "axios";
 axios.default.withCredentials = true;
 
 function Router() {
-  // const { loggedIn } = useContext(AuthContext)
+
+  const { loggedIn } = useContext(AuthContext)
 
   return (
     <BrowserRouter>
@@ -28,32 +29,30 @@ function Router() {
 
       <Route exact path="/" component={Home} />
 
-      {/* {
-          loggedIn === false && ( */}
-      <>
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-      </>
-      {/* )} */}
+          {
+          loggedIn === false && (
+            <>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+            </>
+          )}
 
-      {/* { loggedIn === true && ( */}
-      <>
-        <Route exact path="/fridge" component={Fridge} />
-        <Route exact path="/locations" component={Locations} />
-        <Route exact path="/about" component={About} />
+       
+          { loggedIn === true && (
+          <>
+          <Route exact path="/fridge" component={Fridge} />
+          <Route exact path="/locations" component={Locations} />
+          <Route exact path="/about" component={About} />
 
-        <Route exact path="/InventoryList" component={InventoryList} />
-        <Route
-          exact
-          path="/SecondInventoryList"
-          component={SecondInventoryList}
-        />
-        <Route exact path="/ThirdInventory" component={ThirdInventory} />
-        {/* <Route path= "/edit/:id" component={EditItem}/> */}
-      </>
-      {/* )} */}
-      <Footer />
-    </BrowserRouter>
+          <Route exact path="/InventoryList" component={InventoryList} />
+          <Route exact path="/SecondInventoryList" component={SecondInventoryList} />
+          <Route exact path="/ThirdInventory" component={ThirdInventory} />
+          {/* <Route path= "/edit/:id" component={EditItem}/> */}
+          </>
+         )}
+          <Footer />
+
+      </BrowserRouter>
   );
 }
 

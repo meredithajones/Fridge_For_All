@@ -21,8 +21,8 @@ import {
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function NavbarI() {
-  // const { loggedIn } = useContext(AuthContext);
-  // console.log(loggedIn);
+  const { loggedIn } = useContext(AuthContext);
+  console.log(loggedIn);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -48,6 +48,9 @@ function NavbarI() {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
+
+            {loggedIn === false && ( 
+              <>
             <NavItem>
               <NavLink
                 href="/Login"
@@ -72,6 +75,11 @@ function NavbarI() {
                 Register
               </NavLink>
             </NavItem>
+            </>
+            
+            )} 
+            {loggedIn === true && (
+            <>
             <NavItem>
               <NavLink
                 href="/Fridge"
@@ -108,6 +116,8 @@ function NavbarI() {
                 <LogOutBtn />
               </NavLink>
             </NavItem>
+            </>
+            )}
           </Nav>
         </Collapse>
       </Navbar>
