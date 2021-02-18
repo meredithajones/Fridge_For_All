@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./../../index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import API from "../../utils/API";
 import {
   faChevronRight,
   faChevronLeft,
@@ -10,21 +11,22 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import uuid from "uuid";
 
-const App = ({ keyword }) => {
+const Inventory = ({ keyword }) => {
   //need item name, quantity
-  const [items, setItems] = useState([
-    { id: uuid(), itemName: "Kale 🥬 ", quantity: 1, isSelected: false },
-    { id: uuid(), itemName: "Bread 🍞", quantity: 8, isSelected: false },
-    { id: uuid(), itemName: "Tomato 🍅", quantity: 12, isSelected: false },
-    { id: uuid(), itemName: "Pasta Sauce 🥫", quantity: 5, isSelected: false },
-    { id: uuid(), itemName: "Carrots 🥕", quantity: 4, isSelected: false },
-    { id: uuid(), itemName: "Peanut Butter 🥜", quantity: 2, isSelected: false },
-    { id: uuid(), itemName: "Jelly 🍓", quantity: 2, isSelected: false },
-    { id: uuid(), itemName: "Instant Ramen 🥣", quantity: 24, isSelected: false },
-    { id: uuid(), itemName: "Eggs 🥚", quantity: 12, isSelected: false },
-  ]);
+  // const [items, setItems] = useState([
+  //   { id: uuid(), itemName: "Kale 🥬 ", quantity: 1, isSelected: false },
+  //   { id: uuid(), itemName: "Bread 🍞", quantity: 8, isSelected: false },
+  //   { id: uuid(), itemName: "Tomato 🍅", quantity: 12, isSelected: false },
+  //   { id: uuid(), itemName: "Pasta Sauce 🥫", quantity: 5, isSelected: false },
+  //   { id: uuid(), itemName: "Carrots 🥕", quantity: 4, isSelected: false },
+  //   { id: uuid(), itemName: "Peanut Butter 🥜", quantity: 2, isSelected: false },
+  //   { id: uuid(), itemName: "Jelly 🍓", quantity: 2, isSelected: false },
+  //   { id: uuid(), itemName: "Instant Ramen 🥣", quantity: 24, isSelected: false },
+  //   { id: uuid(), itemName: "Eggs 🥚", quantity: 12, isSelected: false },
+  // ]);
 
   const [inputValue, setInputValue] = useState("");
+  const [items, setItems] = useState([])
 
 //Code below added 02/18
   // function InventoryData() {
@@ -33,18 +35,18 @@ const App = ({ keyword }) => {
   //   const [formObject, setFormObject] = useState({})
   
   //   // Load all items and store them with setInventoryData
-  //   useEffect(() => {
-  //     loadInventoryData()
-  //   }, [])
+    useEffect(() => {
+      loadInventoryData()
+    }, [])
   
-  //   // Loads all items and sets them to inventory
-  //   function loadInventoryData() {
-  //     API.getInventoryData()
-  //       .then(res => 
-  //         setInventoryData(res.data)
-  //       )
-  //       .catch(err => console.log(err));
-  //   };
+  // Loads all items and sets them to inventory
+    function loadInventoryData() {
+      API.getInventoryData()
+        .then(res => 
+          setItems(res.data)
+        )
+        .catch(err => console.log(err));
+    };
     //End of code added 02/18
 
   //sorting variables
@@ -142,7 +144,7 @@ const App = ({ keyword }) => {
       <div className="item-list">
         {items
           .filter((item) =>
-            item.itemName.toLowerCase().includes(keyword.toLowerCase())
+            item.name.toLowerCase().includes(keyword.toLowerCase())
           )
           .map((item, index) => (
             <div className="item-container rounded" style={qtyColor(item.quantity)}>
@@ -150,12 +152,12 @@ const App = ({ keyword }) => {
                 {item.isSelected ? (
                   <>
                     <FontAwesomeIcon icon={faCheckCircle} />
-                    <span className="deleted">{item.itemName}</span>
+                    <span className="deleted">{item.name}</span>
                   </>
                 ) : (
                   <>
                     <FontAwesomeIcon icon={faCircle} />
-                    <span>{item.itemName}</span>
+                    <span>{item.name}</span>
                   </>
                 )}
               </div>
@@ -164,14 +166,15 @@ const App = ({ keyword }) => {
                 <button>
                   <FontAwesomeIcon
                     icon={faChevronLeft}
-                    onClick={() => handleQuantityDecrease(index)}
+                    
+                    onClick={() => handleQuantityDecrease(item.id)}
                   />
                 </button>
                 <span>{item.quantity}</span>
                 <button>
                   <FontAwesomeIcon
                     icon={faChevronRight}
-                    onClick={() => handleQuantityIncrease(index)}
+                    onClick={() => handleQuantityIncrease(item.id)}
                   />
                 </button>
               </div>
@@ -182,4 +185,4 @@ const App = ({ keyword }) => {
   );
 };
 
-export default App;
+export default Inventory;
