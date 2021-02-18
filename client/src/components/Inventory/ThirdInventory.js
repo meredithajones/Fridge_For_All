@@ -13,15 +13,15 @@ import uuid from "uuid";
 const App = ({ keyword }) => {
   //need item name, quantity
   const [items, setItems] = useState([
-    { id: uuid(), itemName: "Kale", quantity: 1, isSelected: false },
-    { id: uuid(), itemName: "Bread", quantity: 8, isSelected: false },
-    { id: uuid(), itemName: "Tomato", quantity: 12, isSelected: false },
-    { id: uuid(), itemName: "Flour", quantity: 5, isSelected: false },
-    { id: uuid(), itemName: "Carrots", quantity: 4, isSelected: false },
-    { id: uuid(), itemName: "Peanut Butter", quantity: 3, isSelected: false },
-    { id: uuid(), itemName: "Jelly", quantity: 2, isSelected: false },
-    { id: uuid(), itemName: "Instant Ramen", quantity: 8, isSelected: false },
-    { id: uuid(), itemName: "Sugar", quantity: 5, isSelected: false },
+    { id: uuid(), itemName: "Kale 🥬 ", quantity: 1, isSelected: false },
+    { id: uuid(), itemName: "Bread 🍞", quantity: 8, isSelected: false },
+    { id: uuid(), itemName: "Tomato 🍅", quantity: 12, isSelected: false },
+    { id: uuid(), itemName: "Pasta Sauce 🥫", quantity: 5, isSelected: false },
+    { id: uuid(), itemName: "Carrots 🥕", quantity: 4, isSelected: false },
+    { id: uuid(), itemName: "Peanut Butter 🥜", quantity: 2, isSelected: false },
+    { id: uuid(), itemName: "Jelly 🍓", quantity: 2, isSelected: false },
+    { id: uuid(), itemName: "Instant Ramen 🥣", quantity: 24, isSelected: false },
+    { id: uuid(), itemName: "Eggs 🥚", quantity: 12, isSelected: false },
   ]);
 
   const [inputValue, setInputValue] = useState("");
@@ -95,12 +95,12 @@ const App = ({ keyword }) => {
     else return good;
   };
   const urgent = {
-    color: "#FFFFFF",
+    color: "#FFEBCD",
     backgroundColor: "#FF6347",
   };
   const good = {
-    color: "#708090",
-    backgroundColor: "#F5F5F5",
+    color: "#483D8B",
+    backgroundColor: "#D8BFD8",
   };
   const surplus = {
     color: "#4682B4",
@@ -124,8 +124,8 @@ const App = ({ keyword }) => {
             item.itemName.toLowerCase().includes(keyword.toLowerCase())
           )
           .map((item, index) => (
-            <div className="item-container" style={qtyColor(item.quantity)}>
-              <div className="item-name" onClick={() => toggleDelete(index)}>
+            <div className="item-container rounded" style={qtyColor(item.quantity)}>
+              <div className="item-name ml-1" onClick={() => toggleDelete(index)}>
                 {item.isSelected ? (
                   <>
                     <FontAwesomeIcon icon={faCheckCircle} />
@@ -139,7 +139,7 @@ const App = ({ keyword }) => {
                 )}
               </div>
 
-              <div className="quantity">
+              <div className="quantity mr-2">
                 <button>
                   <FontAwesomeIcon
                     icon={faChevronLeft}
