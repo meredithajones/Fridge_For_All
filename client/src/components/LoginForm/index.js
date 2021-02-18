@@ -25,7 +25,7 @@ function LoginForm() {
         password,
       };
 
-      await instance.post("http://localhost:3001/auth/login", loginData);
+      await instance.post("/auth/login", loginData);
       await getLoggedIn();
       history.push("/");
     } catch (err) {

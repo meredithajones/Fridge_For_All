@@ -14,9 +14,6 @@ dotenv.config()
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-
-
-
 //Middleware
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
