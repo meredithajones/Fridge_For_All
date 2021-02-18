@@ -22,7 +22,7 @@ axios.default.withCredentials = true
 
 function Router() {
 
-  // const { loggedIn } = useContext(AuthContext)
+  const { loggedIn } = useContext(AuthContext)
 
   return (
       <BrowserRouter>
@@ -30,16 +30,16 @@ function Router() {
 
           <Route exact path="/" component={Home} />
 
-          {/* {
-          loggedIn === false && ( */}
+          {
+          loggedIn === false && (
             <>
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
             </>
-          {/* )} */}
+          )}
 
        
-          {/* { loggedIn === true && ( */}
+          { loggedIn === true && (
           <>
           <Route exact path="/fridge" component={Fridge} />
           <Route exact path="/locations" component={Locations} />
@@ -50,7 +50,7 @@ function Router() {
           <Route exact path="/ThirdInventory" component={ThirdInventory} />
           {/* <Route path= "/edit/:id" component={EditItem}/> */}
           </>
-         {/* )} */}
+         )}
           <Footer />
 
       </BrowserRouter>
