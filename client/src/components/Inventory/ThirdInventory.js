@@ -55,15 +55,21 @@ const Inventory = ({ keyword }) => {
   //default quantity of 1, and the name as the input value.
   const handleAddButtonClick = () => {
     const newItem = {
-      id: uuid,
-      itemName: inputValue,
+      name: inputValue,
       quantity: 1,
       isSelected: false,
     };
 
-    const newItems = [...items, newItem];
-    setItems(newItems);
-    setInputValue("");
+    API.saveItem(newItem)
+    .then (res => {
+      const newItems = [...items, newItem];
+      setItems(newItems);
+      setInputValue("");
+    
+
+    }).catch(err => console.log(err))
+
+   
   };
 
   const handleQuantityIncrease = (index) => {

@@ -20,6 +20,7 @@ findById: function(req, res) {
 },
 
 create: function(req, res) {
+    console.log(req.body)
     db.Inventory
     .create(req.body)
     .then(dbModel => res.json(dbModel))
