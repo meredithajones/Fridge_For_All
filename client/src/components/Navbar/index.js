@@ -6,8 +6,8 @@ import LogOutBtn from "../LogOutBtn/LogOutBtn";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
-  const { loggedIn } = useContext(AuthContext);
-  console.log(loggedIn);
+  // const { loggedIn } = useContext(AuthContext);
+  // console.log(loggedIn);
 
   return (
     <nav className="navbar navbar-expand-lg">
@@ -17,7 +17,7 @@ function Navbar() {
         </Link>
         <div>
           <ul className="navbar-nav">
-            {loggedIn === false && (
+            {/* {loggedIn === false && ( */}
               <>
             <li className="nav-item">
               <Link
@@ -45,9 +45,9 @@ function Navbar() {
               </Link>
             </li>
             </>
-            )}
+            {/* )} */}
 
-            {loggedIn === true && (
+            {/* {loggedIn === true && ( */}
               <>
             <li className="nav-item">
               <Link
@@ -97,7 +97,7 @@ function Navbar() {
               </Link>
             </li>
             </>
-            )}
+            {/* )} */}
           </ul>
         </div>
       </div>
