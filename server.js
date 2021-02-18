@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', "http://localhost:4200");
+  res.header('Access-Control-Allow-Origin', "*");
   res.header('Access-Control-Allow-Headers', true);
   res.header('Access-Control-Allow-Credentials', 'Content-Type');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -31,10 +31,10 @@ app.use(function(req, res, next) {
 });
 app.use(cors({
   Origin: [
-    "http://localhost:3000",
+    "localhost:3000",
     "https://fridge-for-all-philly.herokuapp.com/"
   ],
-  credentials: true
+  credentials: false
 }));
 
 
