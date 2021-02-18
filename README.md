@@ -7,10 +7,13 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/meredithajones/Fridge_For_All)
 
 
-![html badge](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
 ![css badge](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
 ![react badge](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![node.js badge](https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js badge](https://img.shields.io/badge/express.js%20-%23404d59.svg?&style=for-the-badge)
+![Heroku badge](https://img.shields.io/badge/heroku%20-%23430098.svg?&style=for-the-badge&logo=heroku&logoColor=white)
+
+
 
 <img src="https://raw.githubusercontent.com/meredithajones/Fridge_For_All/main/client/public/imgs/FFA.png" width="300">
 
@@ -37,7 +40,9 @@
 
 ## Introduction
   
-Community fridges are fully stocked, volunteer-run refrigerators that are open to the  general public. Anyone can take what they need, no questions asked! Community fridges have been popping up all over the US and have become a way for communities to battle food insecurity due to homelessness, unemployment, and stalled stimulus checks. Did you know there are over 14 community fridges in Philadelphia? Part of the challenge of supporting a community fridge is knowing what is most needed in advance of dropping off provisions. Fridge For All aims to tackle this unique issue by creating an interactive database where users can see what's most urgent ahead of time, and plan accordingly. Users can add what they drop off to increase the total quantity for other users to see, while also being able to subtract from the quantity if they take anything home. In this way, we hope to encourage people to engage with their community more while reducing hunger and food waste.
+Community fridges are fully stocked, volunteer-run refrigerators that are open to the  general public. Anyone can take what they need, no questions asked! Community fridges have been popping up all over the US and have become a way for communities to battle food insecurity due to homelessness, unemployment, and stalled stimulus checks. 
+<br> Did you know there are over 14 community fridges in Philadelphia? Part of the challenge of supporting a community fridge is knowing what is most needed in advance of dropping off provisions. Fridge For All aims to tackle this unique issue by creating an interactive database where users can see what's most urgent ahead of time, and plan accordingly. 
+<br>Users can add what they drop off to increase the total quantity for other users to see, while also being able to subtract from the quantity if they take anything home. In this way, we hope to encourage people to engage with their community more while reducing hunger and food waste.
 
 ## Starting the app locally
 
@@ -83,19 +88,27 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 
 * CSS
 
-* HTML
-
 * NodeJS
 
-* Font Awesome 
+* Mapquest 
+
+* "Authentication Here"
+
+* React-Bootstap
+
+* Hosting on Heroku
+
 
 	
-
 </details>
 
 
 ## Project Challenges
-*  
+*  As a team of three, we each took on quite a bit of work for this project. Luke took on a process for authentication which was so new that he was waiting for guidance to be released on implementation as he was writing the code. 
+
+* In styling the project, Kara initially began working with Material UI. After exploring the options that it provided, it did not seem like the best fit for our project and she quickly pivoted to React-Bootstrap.
+
+* We very much wanted to include a feature to translate the app from English to Spanish. Meredith completed the setup for i18next only to discover that it requires programmers to create JSON files containing all words to be translated along with the corresponding language translation which took the endeavour far beyond the time available for this project.
 
 
 ## Credits
