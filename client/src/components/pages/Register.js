@@ -4,20 +4,26 @@ import Col from "../Col";
 import Container from "../Container";
 import RegisterForm from "../RegisterForm";
 
+const styles = {
+    border: "3px solid black",
+    marginTop: "50px"
+
+}
 
 const Register = () => (
+    <Row>
    <Container>
-        <Row>
+        
             <Col size="md-12">
-                <div className="login" style={{ background: "lightblue" }}>
-                <h1>Welcome to Fridge for All </h1>
-                <h4>Please enter your login information, or sign up for a new account below</h4>
+                <div className="login" style={styles}>
+                <h1 style={{textAlign: "center"}}>Welcome to Fridge for All </h1> 
+                <h4 style={{textAlign: "center", fontSize: "30px"}}>Please sign up for a new account below</h4>
                 <RegisterForm />
-                <a href = "/Login"> Login </a>
                 </div>
             </Col>
-        </Row>
+        
      </Container>
+     </Row>
 );
 
 export default Register;

@@ -3,6 +3,7 @@ import axios from "axios"
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../Context/AuthContext";
 
+
 function RegisterForm() {
 
   const [email, setEmail] = useState("");
@@ -38,30 +39,39 @@ async function register(e) {
 }
 
   return (
-    <div>
-      <h1> Register a new account</h1>
+
+    <div style={{textAlign: "center"}}>
+
       <form onSubmit={register}>
         <input 
+        
         type="email" 
         placeholder="Email"
         onChange={(e) => setEmail(e.target.value)}
         value={email}
+        style={{textAlign: "center"}}
         />
         <input 
         type="password" 
         placeholder="Password"
         onChange={(e) => setPassword(e.target.value)}
-        value={password} />
+        value={password} 
+        style={{marginLeft: "5px", textAlign: "center"}}
+
+        />
+        
         <input 
         type="password" 
         placeholder="Verify Your Password"
         onChange={(e) => setPasswordVerify(e.target.value)}
-        value={passwordVerify} />
-        <button type="submit" className="btn btn-primary" onClick={register}>Register</button>
+        value={passwordVerify}
+        style={{marginLeft: "5px", textAlign: "center"}}
+         />
+         <br></br>
+        <button type="submit" className="btn" onClick={register}> Register</button>
+            
       </form>
-
     </div>
-
 
   )
 }
