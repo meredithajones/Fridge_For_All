@@ -105,6 +105,18 @@ function NavbarI() {
             </NavItem>
             <NavItem>
               <NavLink
+                href="/About"
+                className={
+                  window.location.pathname === "/About"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                Locations
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
                 href=""
                 className={
                   window.location.pathname === ""
