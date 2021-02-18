@@ -2,22 +2,30 @@ import React, { useState } from "react";
 import Inventory from "../Inventory/ThirdInventory.js";
 import Searchbar from "../Searchbar";
 import Aside from "../Aside";
+import Row from "../Row";
+import Col from "../Col";
 
 const Fridge = () => {
   const [keyword, setKeyword] = useState("");
 
   return (
+  
     <div className="container rounded w-100 m-5 mx-auto d-block">
-      <div className="row">
-        <div className="col">
+        <Row>
+        <Col size="lg-6 md-12">
           <Inventory keyword={keyword} />
-        </div>
-        <div className="col">
+          </Col>
+          <Col size="lg-6 md-12">
           <Searchbar keyword={keyword} setKeyword={setKeyword} />
+          
           <Aside />
-        </div>
-      </div>
+          </Col>
+          </Row>
+        
+   
     </div>
+    
+
   );
 };
 

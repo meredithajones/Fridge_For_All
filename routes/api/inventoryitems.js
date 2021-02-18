@@ -8,12 +8,13 @@ const Inventory = require('../../models/Inventorymodel');
 router.route('/')
 .get(InventoryController.findAll)
 .post(InventoryController.create)
+.put(InventoryController.update)
 
 //POST api/inventory
 router
 .route('/:id')
   .get(InventoryController.findById)
-  .put(InventoryController.update)
+  
   .delete(InventoryController.remove);
 
  

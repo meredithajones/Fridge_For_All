@@ -10,22 +10,30 @@ const routes= require("./routes")
 
 dotenv.config()
 
+
 const PORT = process.env.PORT || 3001;
 const app = express();
-
 
 //Middleware
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', "*");
+  res.header('Access-Control-Allow-Headers', true);
+  res.header('Access-Control-Allow-Credentials', 'Content-Type');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  next();
+});
 app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "https://young-forest-06114.herokuapp.com/"
+  Origin: [
+    "localhost:3000",
+    "https://fridge-for-all-philly.herokuapp.com/"
   ],
-  credentials: true
+  credentials: false
 }));
+
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {

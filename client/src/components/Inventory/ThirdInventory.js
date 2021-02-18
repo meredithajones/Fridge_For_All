@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./../../index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import API from "../../utils/API";
 import {
   faChevronRight,
   faChevronLeft,
@@ -10,42 +11,41 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import uuid from "uuid";
 
-const App = ({ keyword }) => {
+const Inventory = ({ keyword }) => {
   //need item name, quantity
-  const [items, setItems] = useState([
-    { id: uuid(), itemName: "Kale 🥬 ", quantity: 1, isSelected: false },
-    { id: uuid(), itemName: "Bread 🍞", quantity: 8, isSelected: false },
-    { id: uuid(), itemName: "Tomato 🍅", quantity: 12, isSelected: false },
-    { id: uuid(), itemName: "Pasta Sauce 🥫", quantity: 5, isSelected: false },
-    { id: uuid(), itemName: "Carrots 🥕", quantity: 4, isSelected: false },
-    { id: uuid(), itemName: "Peanut Butter 🥜", quantity: 2, isSelected: false },
-    { id: uuid(), itemName: "Jelly 🍓", quantity: 2, isSelected: false },
-    { id: uuid(), itemName: "Instant Ramen 🥣", quantity: 24, isSelected: false },
-    { id: uuid(), itemName: "Eggs 🥚", quantity: 12, isSelected: false },
-  ]);
+  // const [items, setItems] = useState([
+  //   { id: uuid(), itemName: "Kale 🥬 ", quantity: 1, isSelected: false },
+  //   { id: uuid(), itemName: "Bread 🍞", quantity: 8, isSelected: false },
+  //   { id: uuid(), itemName: "Tomato 🍅", quantity: 12, isSelected: false },
+  //   { id: uuid(), itemName: "Pasta Sauce 🥫", quantity: 5, isSelected: false },
+  //   { id: uuid(), itemName: "Carrots 🥕", quantity: 4, isSelected: false },
+  //   { id: uuid(), itemName: "Peanut Butter 🥜", quantity: 2, isSelected: false },
+  //   { id: uuid(), itemName: "Jelly 🍓", quantity: 2, isSelected: false },
+  //   { id: uuid(), itemName: "Instant Ramen 🥣", quantity: 24, isSelected: false },
+  //   { id: uuid(), itemName: "Eggs 🥚", quantity: 12, isSelected: false },
+  // ]);
 
   const [inputValue, setInputValue] = useState("");
+  const [items, setItems] = useState([]);
 
-//Code below added 02/18
+  //Code below added 02/18
   // function InventoryData() {
   //   // Setting our component's initial state
   //   const [inventoryData, setInventoryData] = useState([])
   //   const [formObject, setFormObject] = useState({})
-  
+
   //   // Load all items and store them with setInventoryData
-  //   useEffect(() => {
-  //     loadInventoryData()
-  //   }, [])
-  
-  //   // Loads all items and sets them to inventory
-  //   function loadInventoryData() {
-  //     API.getInventoryData()
-  //       .then(res => 
-  //         setInventoryData(res.data)
-  //       )
-  //       .catch(err => console.log(err));
-  //   };
-    //End of code added 02/18
+  useEffect(() => {
+    loadInventoryData();
+  }, []);
+
+  // Loads all items and sets them to inventory
+  function loadInventoryData() {
+    API.getInventoryData()
+      .then((res) => setItems(res.data))
+      .catch((err) => console.log(err));
+  }
+  //End of code added 02/18
 
   //sorting variables
   const [sortQuantity, setSortType] = useState("quantity");
@@ -55,31 +55,62 @@ const App = ({ keyword }) => {
   //default quantity of 1, and the name as the input value.
   const handleAddButtonClick = () => {
     const newItem = {
-      id: uuid,
-      itemName: inputValue,
+      name: inputValue,
       quantity: 1,
       isSelected: false,
     };
 
-    const newItems = [...items, newItem];
-    setItems(newItems);
-    setInputValue("");
+    API.saveItem(newItem)
+    .then (res => {
+      const newItems = [...items, newItem];
+      setItems(newItems);
+      setInputValue("");
+    
+
+    }).catch(err => console.log(err))
+
+   
   };
 
   const handleQuantityIncrease = (index) => {
     const newItems = [...items];
-    newItems[index].quantity++;
+    console.log(newItems);
+    console.log(index);
+    let itemToUpdate = newItems.find(({ _id }) => _id === index);
+    
+    itemToUpdate.quantity++;
+    // newItems[index].quantity++;
+   
+    console.log(itemToUpdate);
+    API.updateItem(itemToUpdate)
+      .then((res) => {
+        console.log(res);
+        setItems([...items, itemToUpdate])
+      
+        sortArray(sortQuantity);
+      })
+      .catch((err) => console.log(err));
     //when the arrows are pushed, the quantity sorts in real time
-    setItems(newItems);
-    sortArray(sortQuantity);
   };
 
   const handleQuantityDecrease = (index) => {
     const newItems = [...items];
-    newItems[index].quantity--;
-    //when the arrows are pushed, the quantity sorts in real time
-    setItems(newItems);
-    sortArray(sortQuantity);
+    console.log(newItems);
+    console.log(index);
+    let itemToUpdate = newItems.find(({ _id }) => _id === index);
+    
+    itemToUpdate.quantity--;
+    // newItems[index].quantity++;
+   
+    console.log(itemToUpdate);
+    API.updateItem(itemToUpdate)
+      .then((res) => {
+        console.log(res);
+        setItems([...items, itemToUpdate])
+      
+        sortArray(sortQuantity);
+      })
+      .catch((err) => console.log(err));
   };
 
   const toggleDelete = (index) => {
@@ -142,20 +173,26 @@ const App = ({ keyword }) => {
       <div className="item-list">
         {items
           .filter((item) =>
-            item.itemName.toLowerCase().includes(keyword.toLowerCase())
+            item.name.toLowerCase().includes(keyword.toLowerCase())
           )
           .map((item, index) => (
-            <div className="item-container rounded" style={qtyColor(item.quantity)}>
-              <div className="item-name ml-1" onClick={() => toggleDelete(index)}>
+            <div
+              className="item-container rounded"
+              style={qtyColor(item.quantity)}
+            >
+              <div
+                className="item-name ml-1"
+                onClick={() => toggleDelete(index)}
+              >
                 {item.isSelected ? (
                   <>
                     <FontAwesomeIcon icon={faCheckCircle} />
-                    <span className="deleted">{item.itemName}</span>
+                    <span className="deleted">{item.name}</span>
                   </>
                 ) : (
                   <>
                     <FontAwesomeIcon icon={faCircle} />
-                    <span>{item.itemName}</span>
+                    <span>{item.name}</span>
                   </>
                 )}
               </div>
@@ -164,14 +201,14 @@ const App = ({ keyword }) => {
                 <button>
                   <FontAwesomeIcon
                     icon={faChevronLeft}
-                    onClick={() => handleQuantityDecrease(index)}
+                    onClick={() => handleQuantityDecrease(item._id)}
                   />
                 </button>
                 <span>{item.quantity}</span>
                 <button>
                   <FontAwesomeIcon
                     icon={faChevronRight}
-                    onClick={() => handleQuantityIncrease(index)}
+                    onClick={() => handleQuantityIncrease(item._id)}
                   />
                 </button>
               </div>
@@ -182,4 +219,4 @@ const App = ({ keyword }) => {
   );
 };
 
-export default App;
+export default Inventory;

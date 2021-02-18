@@ -12,8 +12,13 @@ const inventorySchema = new Schema({
   },
 
 quantity: {
-  type: Number
+  type: Number,
+  default: 0
 
+}, 
+isSelected:{
+  type: Boolean, 
+  default: false
 }
 });
 
