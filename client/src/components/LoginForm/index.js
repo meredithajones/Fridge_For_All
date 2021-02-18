@@ -2,6 +2,7 @@ import React, {useContext, useState} from "react";
 import axios from "axios"
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../Context/AuthContext";
+import "./style.css";
 
 function LoginForm() {
 
@@ -36,21 +37,23 @@ async function login(e) {
 }
   return (
     <div>
-      <h1> log into your account</h1>
+
       <form onSubmit={login}>
         <input 
         type="email" 
         placeholder="Email"
         onChange={(e) => setEmail(e.target.value)}
         value={email}
+        style={{textAlign: "center"}}
         />
         <input 
         type="password" 
         placeholder="Password"
         onChange={(e) => setPassword(e.target.value)}
-        value={password} />
-
-        <button type="submit" className="btn btn-primary" onClick={login}>Log in</button>
+        value={password}
+        style={{marginLeft: "5px", textAlign: "center"}} />
+        <br></br>
+        <button type="submit" className="btn" onClick={login} >Log in</button>
       </form>
 
     </div>

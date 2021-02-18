@@ -12,7 +12,7 @@ const Searchbar = ({ keyword, setKeyword }) => {
         className="add-item-input"
         key="random1"
         value={keyword}
-        placeholder={"Search what's here "}
+        placeholder={"Search what's in the fridge..."}
         onChange={(e) => setKeyword(e.target.value)}
       />
 <FontAwesomeIcon icon={faSearch}  />
