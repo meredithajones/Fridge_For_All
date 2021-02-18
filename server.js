@@ -31,7 +31,7 @@ app.use(function(req, res, next) {
 });
 app.use(cors({
   Origin: [
-    "http://localhost:3000",
+    "localhost:3000",
     "https://fridge-for-all-philly.herokuapp.com/"
   ],
   credentials: true
