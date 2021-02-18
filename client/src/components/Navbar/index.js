@@ -32,7 +32,7 @@ function NavbarI() {
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/"> Fridge For All</NavbarBrand>
 
-        {/* <Nav>
+        <Nav>
           <NavItem>
             <NavLink
               href=""
@@ -43,7 +43,7 @@ function NavbarI() {
               <LogOutBtn />
             </NavLink>
           </NavItem>
-        </Nav> */}
+        </Nav>
 
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -96,7 +96,7 @@ function NavbarI() {
                 Locations
               </NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink
                 href=""
                 className={
@@ -107,7 +107,7 @@ function NavbarI() {
               >
                 <LogOutBtn />
               </NavLink>
-            </NavItem>
+            </NavItem> */}
           </Nav>
         </Collapse>
       </Navbar>
