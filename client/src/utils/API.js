@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//Is inventoryitems what we should be connecting to here?
 export default {
 //Post Inventory Items
 saveItem: function(inventoryData) {

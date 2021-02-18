@@ -26,6 +26,27 @@ const App = ({ keyword }) => {
 
   const [inputValue, setInputValue] = useState("");
 
+//Code below added 02/18
+  // function InventoryData() {
+  //   // Setting our component's initial state
+  //   const [inventoryData, setInventoryData] = useState([])
+  //   const [formObject, setFormObject] = useState({})
+  
+  //   // Load all items and store them with setInventoryData
+  //   useEffect(() => {
+  //     loadInventoryData()
+  //   }, [])
+  
+  //   // Loads all items and sets them to inventory
+  //   function loadInventoryData() {
+  //     API.getInventoryData()
+  //       .then(res => 
+  //         setInventoryData(res.data)
+  //       )
+  //       .catch(err => console.log(err));
+  //   };
+    //End of code added 02/18
+
   //sorting variables
   const [sortQuantity, setSortType] = useState("quantity");
   const [data, setData] = useState([]);
