@@ -27,7 +27,7 @@ function RegisterForm() {
         passwordVerify,
       };
 
-      await instance.post("http://localhost:3001/auth", registeredData);
+      await instance.post("/auth", registeredData);
       await getLoggedIn();
       history.push("/");
     } catch (err) {
