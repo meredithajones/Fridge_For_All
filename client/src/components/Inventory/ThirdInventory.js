@@ -89,10 +89,22 @@ const Inventory = ({ keyword }) => {
 
   const handleQuantityDecrease = (index) => {
     const newItems = [...items];
-    newItems[index].quantity--;
-    //when the arrows are pushed, the quantity sorts in real time
-    setItems(newItems);
-    sortArray(sortQuantity);
+    console.log(newItems);
+    console.log(index);
+    let itemToUpdate = newItems.find(({ _id }) => _id === index);
+    
+    itemToUpdate.quantity--;
+    // newItems[index].quantity++;
+   
+    console.log(itemToUpdate);
+    API.updateItem(itemToUpdate)
+      .then((res) => {
+        console.log(res);
+        setItems([...items, itemToUpdate])
+      
+        sortArray(sortQuantity);
+      })
+      .catch((err) => console.log(err));
   };
 
   const toggleDelete = (index) => {
