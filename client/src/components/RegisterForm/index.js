@@ -36,7 +36,7 @@ function RegisterForm() {
   }
 
   return (
-    <div className="container rounded w-75 mt-5 mb-5 p-3 d-block">
+    <div className="container rounded w-75 mt-5 mb-5 p-0 d-block">
       <form onSubmit={register}>
         <input
           type="email"

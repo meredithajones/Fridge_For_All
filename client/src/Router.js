@@ -1,6 +1,6 @@
-import React, { useContext }  from "react";
+import React, { useContext } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import AuthContext from "./Context/AuthContext"
+import AuthContext from "./Context/AuthContext";
 
 //importing pages
 import About from "./components/pages/About";
@@ -13,22 +13,21 @@ import InventoryList from "./components/Inventory/InventoryList";
 import SecondInventoryList from "./components/Inventory/SecondInventoryList";
 import ThirdInventory from "./components/Inventory/ThirdInventory";
 
-
 //importing components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import axios from "axios"
-axios.default.withCredentials = true
+import axios from "axios";
+axios.default.withCredentials = true;
 
 function Router() {
 
   const { loggedIn } = useContext(AuthContext)
 
   return (
-      <BrowserRouter>
-          <Navbar />
+    <BrowserRouter>
+      <Navbar />
 
-          <Route exact path="/" component={Home} />
+      <Route exact path="/" component={Home} />
 
           {
           loggedIn === false && (
