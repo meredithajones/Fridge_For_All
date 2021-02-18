@@ -1,11 +1,11 @@
 # Fridge For All- Group Project
-***
+
+---
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![GitHub repo size](https://img.shields.io/github/repo-size/meredithajones/Fridge_For_All?logo=github)
 ![GitHub top language](https://img.shields.io/github/languages/top/meredithajones/Fridge_For_All?color=green&logo=github&logoColor=green)
 ![GitHub language count](https://img.shields.io/github/languages/count/meredithajones/Fridge_For_All)
-
 
 ![html badge](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
 ![css badge](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
@@ -16,28 +16,27 @@
 
 ## Table of Contents
 
--[Introduction](#Introduction)
+🥬 [Introduction](#Introduction)
 
--[Technology](#Technologies)
+🍅 [Technology](#Technologies)
 
--[Screenshots](#Screenshots)
-   
--[Usage](#Usage)
+🍞 [Screenshots](#Screenshots)
 
--[Credits](#Credits)
+🥑 [Usage](#Usage)
 
--[Contact](#Contact)
+🌶️ [Credits](#Credits)
 
--[License](#License) 
+🍉 [Contact](#Contact)
 
+🧄 [License](#License)
 
 ## Links
 
-* [Deployed Link]()
+- [Deployed Link]()
 
 ## Introduction
-  
-Community fridges are fully stocked, volunteer-run refrigerators that are open to the  general public. Anyone can take what they need, no questions asked! Community fridges have been popping up all over the US and have become a way for communities to battle food insecurity due to homelessness, unemployment, and stalled stimulus checks. Did you know there are over 14 community fridges in Philadelphia? Part of the challenge of supporting a community fridge is knowing what is most needed in advance of dropping off provisions. Fridge For All aims to tackle this unique issue by creating an interactive database where users can see what's most urgent ahead of time, and plan accordingly. Users can add what they drop off to increase the total quantity for other users to see, while also being able to subtract from the quantity if they take anything home. In this way, we hope to encourage people to engage with their community more while reducing hunger and food waste.
+
+Community fridges are fully stocked, volunteer-run refrigerators that are open to the general public. Anyone can take what they need, no questions asked! Community fridges have been popping up all over the US and have become a way for communities to battle food insecurity due to homelessness, unemployment, and stalled stimulus checks. Did you know there are over 14 community fridges in Philadelphia? Part of the challenge of supporting a community fridge is knowing what is most needed in advance of dropping off provisions. Fridge For All aims to tackle this unique issue by creating an interactive database where users can see what's most urgent ahead of time, and plan accordingly. Users can add what they drop off to increase the total quantity for other users to see, while also being able to subtract from the quantity if they take anything home. In this way, we hope to encourage people to engage with their community more while reducing hunger and food waste.
 
 ## Starting the app locally
 
@@ -57,67 +56,61 @@ npm start
 
 Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
 
-
 ### Screen Shots
- ## Gif
 
-<br>
-
- _App Functionality: "Showing data entered in offline mode persisting when the app is brought back online"_
-
-<br>
+## Gif
 
 ![“"]()
 
-<br>
-
-
-
 ## Technologies
+
 <details>
 <summary>Technology used to create application</summary>
 
+- React
 
+- JSON Web Token
 
-* React
+- Bcrypt
 
-* CSS
+- Mongo DB
 
-* HTML
+- CSS/Bootstrap
 
-* NodeJS
+- HTML5
 
-* Font Awesome 
+- Node.js
 
-	
+- Express.js
 
+- Heroku
+
+- Font Awesome
 </details>
 
-
 ## Project Challenges
-*  
 
+-
 
 ## Credits
 
-* [npm docs react-router-dom package](https://www.npmjs.com/package/react-router-dom)
-* [React Bootstrap Components Docs: Tables](https://react-bootstrap.github.io/components/table/)
-* [React Dev Docs: Create React App, Folder Structure](https://create-react-app.dev/docs/folder-structure/) 
-* [React Training–React Router](https://reactrouter.com/web/guides/primary-components)
-
+- [npm docs react-router-dom package](https://www.npmjs.com/package/react-router-dom)
+- [React Bootstrap Components Docs: Tables](https://react-bootstrap.github.io/components/table/)
+- [React Dev Docs: Create React App, Folder Structure](https://create-react-app.dev/docs/folder-structure/)
+- [React Training–React Router](https://reactrouter.com/web/guides/primary-components)
+- [Four ways to style React components](https://codeburst.io/4-four-ways-to-style-react-components-ac6f323da822)
+- [14 FREE Community Refrigerators Around Philadelphia](https://www.thecitypulse.com/post/community-refrigerators)
 
 ## Authors
- Kara Schmidt, Luke Martin, Meredith Jones
+
+Kara Schmidt, Luke Martin, Meredith Jones
 
 ## Contact
+
 [@Kara Schmidt](https://github.com/karajsch)
 [@Luke Martin](https://github.com/LukeMartin-123)
 [@MeredithJones](https://github.com/meredithajones)
 
-## License 
+## License
+
 This project is licensed under the terms of the MIT license.
-
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
