@@ -65,10 +65,22 @@ npm start
 Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
 
 ### Screen Shots
+<br>
+
+Fridge For All Landing Page
+!["The main landing page for Fridge For All"](./client/public/imgs/landing.png)
+
 
 ## Gif
 
-![“"]()
+Demonstrating app registration/login functionality
+![“A short video showing the ability to create a user account"](./client/public/assets/gifs/register.gif)
+
+Demonstrating app inventory counting, sorting and delete functionality
+![“A short video showing new items being added to the fridge, items being increased and decreased in number, and item search"](./client/public/assets/gifs/inventory.gif)
+
+Demonstrating map function, and "About" section.
+![“A short video showing the location page for fridges with pin drops at their locations, as well as the page with general information about community fridges in Philadelphia"](./client/public/assets/gifs/mapabout.gif)
 
 ## Technologies
 
@@ -87,9 +99,9 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 
 * Mapquest
 
-* "Authentication Here"
+* Axios
 
-* React-Bootstap
+* React-Bootstrap
 
 * Mongo AtlasDB
 
@@ -151,3 +163,4 @@ Kara Schmidt, Luke Martin, Meredith Jones
 ## License
 
 This project is licensed under the terms of the MIT license.
+
