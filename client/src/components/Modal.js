@@ -9,7 +9,7 @@ const ModalAlert = ({ show, handleClose, error, title }) => {
         <Modal show={ show } onHide={ handleClose }>
             <Modal.Header>
                 <Modal.Title>
-                    { title ? 'Success!' : 'Oh No!' }
+                    { title ? 'Success!' : 'Sorry!' }
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>

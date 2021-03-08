@@ -3,6 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../Context/AuthContext";
 import "./style.css";
+import Modal from "../Modal";
 
 function RegisterForm() {
   const [email, setEmail] = useState("");
@@ -12,6 +13,13 @@ function RegisterForm() {
   const { getLoggedIn } = useContext(AuthContext);
 
   const history = useHistory();
+  // State for modal error message
+  const [errMsg, setErrMsg] = useState('');
+  // State for modal visibility
+  const [show, setShow] = useState(false);
+  // Modal functions for closing and showing
+  const handleClose = () => setShow(false); 
+  const handleShow = () => setShow(true);
 
   const instance = axios.create({
     withCredentials: true,
@@ -32,6 +40,10 @@ function RegisterForm() {
       history.push("/");
     } catch (err) {
       console.error(err);
+      document.getElementById("password").value = "";
+      document.getElementById("re-enterPassword").value = "";
+      setErrMsg("Please re-enter password correctly");
+      handleShow();
     }
   }
 
@@ -48,6 +60,7 @@ function RegisterForm() {
 
         <input
           type="password"
+          id = "password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
@@ -56,6 +69,7 @@ function RegisterForm() {
 
         <input
           type="password"
+          id = "re-enterPassword"
           className="field"
           placeholder="Verify Your Password"
           onChange={(e) => setPasswordVerify(e.target.value)}
@@ -72,6 +86,7 @@ function RegisterForm() {
           </div>
         </div>
       </form>
+        <Modal show={show} handleClose={handleClose} error={errMsg} />
     </div>
   );
 }
