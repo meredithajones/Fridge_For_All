@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-// const bodyParser = require("body-parser");
 const logger = require("morgan");
 const dotenv = require("dotenv")
 const cookieParser = require("cookie-parser")
@@ -55,10 +54,6 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-  
-// db.on("error", error => {
-//   console.log("Database Error:", error);
-// });
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
