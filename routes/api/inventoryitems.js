@@ -2,7 +2,7 @@ const router = require('express').Router();
 const InventoryController = require ("../../controllers/InventoryControllers") 
 
 // Inventory Model
-const Inventory = require('../../models/Inventorymodel');
+const Inventory = require('../../models/Inventory');
 
 //route GET api/inventory
 router.route('/')
@@ -14,7 +14,6 @@ router.route('/')
 router
 .route('/:id')
   .get(InventoryController.findById)
-  
   .delete(InventoryController.remove);
 
  

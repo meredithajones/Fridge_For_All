@@ -3,6 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../Context/AuthContext";
 import "./style.css";
+import Modal from "../Modal"
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -11,6 +12,14 @@ function LoginForm() {
   const { getLoggedIn } = useContext(AuthContext);
 
   const history = useHistory();
+      
+  // State for modal error message
+  const [errMsg, setErrMsg] = useState('');
+  // State for modal visibility
+  const [show, setShow] = useState(false);
+  // Modal functions for closing and showing
+  const handleClose = () => setShow(false); 
+  const handleShow = () => setShow(true);
 
   const instance = axios.create({
     withCredentials: true,
@@ -30,6 +39,10 @@ function LoginForm() {
       history.push("/");
     } catch (err) {
       console.error(err);
+      document.getElementById("password").value = "";
+      document.getElementById("email").value = "";
+      setErrMsg("Wrong username or password");
+      handleShow();
     }
   }
   return (
@@ -37,6 +50,7 @@ function LoginForm() {
       <form onSubmit={login}>
         <input
           type="email"
+          id="email"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
@@ -44,6 +58,7 @@ function LoginForm() {
         />
         <input
           type="password"
+          id="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
@@ -54,6 +69,7 @@ function LoginForm() {
           Log in
         </button>
       </form>
+        <Modal show={show} handleClose={handleClose} error={errMsg} />
     </div>
   );
 }
